@@ -50,6 +50,8 @@ body {
 }
 
 .main_slider {
+	position: relative;
+	z-index: 1;
 
 	&,
 	.slick-list,
@@ -91,6 +93,11 @@ body {
 		flex: 0 0 calc(33.333333% - 1rem);
 		margin: 0.4rem 0.5rem;
 		width: calc(33.333333% - 1rem);
+
+		.gatsby-image-wrapper {
+			height: 100% !important;
+			width: 100% !important;
+		}
 	}
 
 	&.products {
@@ -109,5 +116,31 @@ body {
 
 	&.verticals {
 		.tile {}
+	}
+}
+
+.sub {
+	background-color: rgba(red, 0.6);
+	height: 100%;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	transform: translateY(100%);
+	transition: transform 1s ease-out;
+	width: 100%;
+	z-index: 100;
+
+	&.active {
+		pointer-events: all;
+		transform: translateY(0%);
+	}
+
+	.inner {
+		height: 80%;
+		left: 10%;
+		position: absolute;
+		top: 10%;
+		width: 80%;
 	}
 }
