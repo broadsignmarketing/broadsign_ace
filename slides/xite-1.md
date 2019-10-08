@@ -9,6 +9,7 @@ gallery:
 categories:
   products:
     broadsign_creator: true
+    broadsign_direct: true
     broadsign_publish: true
   verticals:
     healthcare: true
