@@ -42,39 +42,48 @@ function IndexPage({ data }) {
 			<div id="app">
 				<div className="inner">
 					<Slider {...sliderSettings}>
-						<div className="tileSet products">
-							{data.productsTiles.edges.map((e) => {
-								const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
-								return (
-									<a className="tile" onClick={() => { updateSections("products", subsection); }} key={e.node.childImageSharp.id}>
-										<Img fluid={e.node.childImageSharp.fluid} objectFit="contain"  />
-									</a>
-								)
-							})}
+						<div className="slide products">
+							<h1>Products</h1>
+							<div className="tile_set">
+								{data.productsTiles.edges.map((e) => {
+									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
+									return (
+										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("products", subsection); }} key={e.node.childImageSharp.id}>
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain"  />
+										</a>
+									)
+								})}
+							</div>
 						</div>
-						<div className="tileSet programmatic">
-							{data.programmaticTiles.edges.map((e) => {
-								const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
-								return (
-									<a className="tile" onClick={() => { updateSections("programmatic", subsection); }} key={e.node.childImageSharp.id}>
-										<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
-									</a>
-								)
-							})}
+						<div className="slide programmatic">
+							<h1>Programmatic</h1>
+							<div className="tile_set">
+								{data.programmaticTiles.edges.map((e) => {
+									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
+									return (
+										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("programmatic", subsection); }} key={e.node.childImageSharp.id}>
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
+										</a>
+									)
+								})}
+							</div>
 						</div>
-						<div className="tileSet verticals">
-							{data.verticalsTiles.edges.map((e) => {
-								const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
-								return (
-									<a className="tile" onClick={() => { updateSections("verticals", subsection); }} key={e.node.childImageSharp.id}>
-										<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
-									</a>
-								)
-							})}
+						<div className="slide verticals">
+							<h1>Verticals</h1>
+							<div className="tile_set">
+								{data.verticalsTiles.edges.map((e) => {
+									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
+									return (
+										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("verticals", subsection); }} key={e.node.childImageSharp.id}>
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
+										</a>
+									)
+								})}
+							</div>
 						</div>
 					</Slider>
 				</div>
-				<div className={classnames("sub", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
+				<div className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					<SectionSlider main={section} sub={subSection} />
 					<button onClick={() => { setClientsSliderActive("") }}>X</button>
 				</div>
@@ -87,7 +96,7 @@ export default IndexPage;
 
 export const queryTiles = graphql `
 	query Tiles {
-		productsTiles: allFile(filter: { relativePath: {regex : "/^tile_products_/" }}) {
+		productsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex: "/^tile_products_/"}}) {
 			edges {
 				node {
 					relativePath
@@ -101,7 +110,7 @@ export const queryTiles = graphql `
 				}
 			}
 		}
-		programmaticTiles: allFile(filter: { relativePath: {regex : "/^tile_programmatic_/" }}) {
+		programmaticTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_programmatic_/" }}) {
 			edges {
 				node {
 					relativePath
@@ -115,7 +124,7 @@ export const queryTiles = graphql `
 				}
 			}
 		}
-		verticalsTiles: allFile(filter: { relativePath: {regex : "/^tile_verticals_/" }}) {
+		verticalsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_verticals_/" }}) {
 			edges {
 				node {
 					relativePath

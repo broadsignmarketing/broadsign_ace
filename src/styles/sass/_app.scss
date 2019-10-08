@@ -1,0 +1,78 @@
+@font-face {
+	font-family: "Roboto Black";
+	src: url("./fonts/Roboto-Black.woff2") format("woff2"),
+		url("./fonts/Roboto-Black.woff") format("woff"),
+		url("./fonts/Roboto-Black.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Roboto Regular";
+	src: url("./fonts/Roboto-Regular.woff2") format("woff2"),
+		url("./fonts/Roboto-Regular.woff") format("woff"),
+		url("./fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@mixin cover {
+	flex: 0 0 100%;
+	height: 100%;
+	left: 0;
+	max-height: 100%;
+	max-width: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+@mixin flexCenter {
+	align-content: center;
+	align-items: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+html {
+	font-size: calc(5px + 0.3125vw);
+	line-height: 140%;
+
+	* {
+		box-sizing: border-box;
+		outline: none;
+		-webkit-tap-highlight-color: transparent;
+	}
+}
+
+body {
+	background-color: #000;
+	border: 0 none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#global {
+	background-color: #000;
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
+	width: 100vw;
+}
+
+#app {
+	background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
+	display: flex;
+	height: 100vh;
+	left: 50%;
+	max-height: 768px;
+	max-width: 1024px;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100vw;
+
+	&>.inner {
+		@include cover;
+		background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
+	}
+}

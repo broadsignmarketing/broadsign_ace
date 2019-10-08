@@ -18,27 +18,33 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Feature Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Image Gallery"
+        name: "gallery"
+        widget: "list"
+        fields:
+        - {label: "Image #1", name: "thumbnail_1", widget: "image", required: false}
+        - {label: "Image #2", name: "thumbnail_2", widget: "image", required: false}
+        - {label: "Image #3", name: "thumbnail_3", widget: "image", required: false}
       - label: "Products"
         name: "Products"
         widget: "object"
         fields:
-        - {label: "Broadsign Control", name: "broadsignControl", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Creator", name: "broadsignCreator", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Direct", name: "broadsignDirect", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Publish", name: "broadsignPublish", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Reach", name: "broadsignReach", widget: "boolean", default: false, required: false}
+        - {label: "Broadsign Control", name: "broadsign_control", widget: "boolean", default: false, required: false}
+        - {label: "Broadsign Creator", name: "broadsign_creator", widget: "boolean", default: false, required: false}
+        - {label: "Broadsign Direct", name: "broadsign_direct", widget: "boolean", default: false, required: false}
+        - {label: "Broadsign Publish", name: "broadsign_publish", widget: "boolean", default: false, required: false}
+        - {label: "Broadsign Reach", name: "broadsign_reach", widget: "boolean", default: false, required: false}
       - label: "Verticals"
         name: "Verticals"
         widget: "object"
         fields:
         - {label: "Cinema", name: "cinema", widget: "boolean", default: false, required: false}
-        - {label: "Gas Stations", name: "gasStations", widget: "boolean", default: false, required: false}
+        - {label: "Gas Stations", name: "gas_stations", widget: "boolean", default: false, required: false}
         - {label: "Healthcare", name: "healthcare", widget: "boolean", default: false, required: false}
         - {label: "Hospitality", name: "hospitality", widget: "boolean", default: false, required: false}
-        - {label: "Internal Comms", name: "internalComms", widget: "boolean", default: false, required: false}
+        - {label: "Internal Comms", name: "internal_comms", widget: "boolean", default: false, required: false}
         - {label: "Outdoor", name: "outdoor", widget: "boolean", default: false, required: false}
-        - {label: "Shopping Malls", name: "shoppingMalls", widget: "boolean", default: false, required: false}
-        - {label: "Smart Cities", name: "smartCities", widget: "boolean", default: false, required: false}
+        - {label: "Shopping Malls", name: "shopping_malls", widget: "boolean", default: false, required: false}
+        - {label: "Smart Cities", name: "smart_cities", widget: "boolean", default: false, required: false}
         - {label: "Transit", name: "transit", widget: "boolean", default: false, required: false}
