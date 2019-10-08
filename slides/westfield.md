@@ -8,17 +8,10 @@ gallery:
   thumbnail_3: /images/uploads/hero_westfield_3.jpg
 categories:
   products:
-    broadsign_control: true
-    broadsign_creator: false
-    broadsign_direct: false
-    broadsign_publish: true
-    broadsign_reach: true
+    - broadsign_control
+    - broadsign_reach
   verticals:
-    gas_stations: true
-    healthcare: false
-    internal_comms: false
-    outdoor: true
-    shopping_malls: false
-    transit: true
+    - hospitality
+    - transit
 ---
 Such West, So Field !
