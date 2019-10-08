@@ -8,10 +8,14 @@ gallery:
   thumbnail_3: /images/uploads/hero_xite_3.jpg
 categories:
   products:
-    broadsign_creator: true
-    broadsign_publish: true
+    broadsign_creator: false
+    broadsign_publish: false
+  products_2:
+    - broadsign_control
+    - broadsign_reach
   verticals:
-    healthcare: true
+    gas_stations: true
+    healthcare: false
     internal_comms: true
     shopping_malls: true
 ---
