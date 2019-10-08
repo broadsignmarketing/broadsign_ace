@@ -60,6 +60,6 @@ module.exports = {
 		  // Plugins configs
 		  plugins: [],
 		},
-	  },
+	},
   ],
 }

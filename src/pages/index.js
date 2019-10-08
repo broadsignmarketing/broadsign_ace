@@ -9,7 +9,8 @@ import SectionSlider from "../components/SectionSlider";
 
 import "../styles/styles.css";
 
-function IndexPage({ data }) {
+function IndexPage(props) {
+	const {data} = props;
 	const [section, setSection] = useState("products");
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
@@ -84,7 +85,7 @@ function IndexPage({ data }) {
 					</Slider>
 				</div>
 				<div className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
-					<SectionSlider main={section} sub={subSection} />
+					{section !== "" && subSection !== "none" ? <SectionSlider main={section} sub={subSection} /> : null}
 					<button onClick={() => { setClientsSliderActive("") }}>X</button>
 				</div>
 			</div>
