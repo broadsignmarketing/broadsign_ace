@@ -26,6 +26,13 @@ collections:
       - {label: "Image #1", name: "thumbnail_1", widget: "image", required: false}
       - {label: "Image #2", name: "thumbnail_2", widget: "image", required: false}
       - {label: "Image #3", name: "thumbnail_3", widget: "image", required: false}
+      - {label: "Image #4", name: "thumbnail_4", widget: "image", required: false}
+      - {label: "Image #5", name: "thumbnail_5", widget: "image", required: false}
+      - {label: "Image #6", name: "thumbnail_6", widget: "image", required: false}
+      - {label: "Image #7", name: "thumbnail_7", widget: "image", required: false}
+      - {label: "Image #8", name: "thumbnail_8", widget: "image", required: false}
+      - {label: "Image #9", name: "thumbnail_9", widget: "image", required: false}
+      - {label: "Image #10", name: "thumbnail_10", widget: "image", required: false}
     - label: "Categories"
       name: "categories"
       widget: "object"
@@ -39,6 +46,15 @@ collections:
         - {label: "Broadsign Direct", name: "broadsign_direct", widget: "boolean", default: false, required: false}
         - {label: "Broadsign Publish", name: "broadsign_publish", widget: "boolean", default: false, required: false}
         - {label: "Broadsign Reach", name: "broadsign_reach", widget: "boolean", default: false, required: false}
+      - label: "Products_2"
+        name: "products_2"
+        widget: "select"
+        options:
+        - {label: "Broadsign Control", value: "broadsign_control"}
+        - {label: "Broadsign Creator", value: "broadsign_creator"}
+        - {label: "Broadsign Direct", value: "broadsign_direct"}
+        - {label: "Broadsign Publish", value: "broadsign_publish"}
+        - {label: "Broadsign Reach", value: "broadsign_reach"}
       - label: "Verticals"
         name: "verticals"
         widget: "object"
