@@ -23,7 +23,6 @@ export const sectionContent = graphql `
 			edges {
 				node {
 					frontmatter {
-						gallery
 						categories {
 							products
 							verticals
