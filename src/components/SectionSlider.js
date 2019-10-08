@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React/*, { useState, useEffect }*/ from "react";
 // import Slider from "react-slick";
 // import { graphql } from "gatsby";
 
@@ -23,11 +23,7 @@ export const sectionContent = graphql `
 			edges {
 				node {
 					frontmatter {
-						gallery {
-							thumbnail_1
-							thumbnail_2
-							thumbnail_3
-						}
+						gallery
 						categories {
 							products
 							verticals
