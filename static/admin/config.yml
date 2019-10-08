@@ -39,16 +39,8 @@ collections:
       fields:
       - label: "Products"
         name: "products"
-        widget: "object"
-        fields:
-        - {label: "Broadsign Control", name: "broadsign_control", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Creator", name: "broadsign_creator", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Direct", name: "broadsign_direct", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Publish", name: "broadsign_publish", widget: "boolean", default: false, required: false}
-        - {label: "Broadsign Reach", name: "broadsign_reach", widget: "boolean", default: false, required: false}
-      - label: "Products_2"
-        name: "products_2"
         widget: "select"
+        multiple: true
         options:
         - {label: "Broadsign Control", value: "broadsign_control"}
         - {label: "Broadsign Creator", value: "broadsign_creator"}
@@ -57,14 +49,15 @@ collections:
         - {label: "Broadsign Reach", value: "broadsign_reach"}
       - label: "Verticals"
         name: "verticals"
-        widget: "object"
-        fields:
-        - {label: "Cinema", name: "cinema", widget: "boolean", default: false, required: false}
-        - {label: "Gas Stations", name: "gas_stations", widget: "boolean", default: false, required: false}
-        - {label: "Healthcare", name: "healthcare", widget: "boolean", default: false, required: false}
-        - {label: "Hospitality", name: "hospitality", widget: "boolean", default: false, required: false}
-        - {label: "Internal Comms", name: "internal_comms", widget: "boolean", default: false, required: false}
-        - {label: "Outdoor", name: "outdoor", widget: "boolean", default: false, required: false}
-        - {label: "Shopping Malls", name: "shopping_malls", widget: "boolean", default: false, required: false}
-        - {label: "Smart Cities", name: "smart_cities", widget: "boolean", default: false, required: false}
-        - {label: "Transit", name: "transit", widget: "boolean", default: false, required: false}
+        widget: "select"
+        multiple: true
+        options:
+        - {label: "Cinema", value: "cinema"}
+        - {label: "Gas Stations", value: "gas_stations"}
+        - {label: "Healthcare", value: "healthcare"}
+        - {label: "Hospitality", value: "hospitality"}
+        - {label: "Internal Comms", value: "internal_comms"}
+        - {label: "Outdoor", value: "outdoor"}
+        - {label: "Shopping Malls", value: "shopping_malls"}
+        - {label: "Smart Cities", value: "smart_cities"}
+        - {label: "Transit", value: "transit"}
