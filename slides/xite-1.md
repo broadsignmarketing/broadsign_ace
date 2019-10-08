@@ -1,19 +1,24 @@
 ---
 layout: blog
-title: Xite
+title: Westfield
 date: 2019-10-06T14:15:28.059Z
 gallery:
-  thumbnail_1: /images/uploads/hero_xite_1.jpg
-  thumbnail_2: /images/uploads/hero_xite_2.jpg
-  thumbnail_3: /images/uploads/hero_xite_3.jpg
+  thumbnail_1: /images/uploads/hero_westfield_1.jpg
+  thumbnail_2: /images/uploads/hero_westfield_2.jpg
+  thumbnail_3: /images/uploads/hero_westfield_3.jpg
 categories:
   products:
-    broadsign_creator: true
-    broadsign_direct: true
+    broadsign_control: true
+    broadsign_creator: false
+    broadsign_direct: false
     broadsign_publish: true
+    broadsign_reach: true
   verticals:
-    healthcare: true
-    internal_comms: true
-    shopping_malls: true
+    gas_stations: true
+    healthcare: false
+    internal_comms: false
+    outdoor: true
+    shopping_malls: false
+    transit: true
 ---
-So much Xitement !
+Such West, So Field !
