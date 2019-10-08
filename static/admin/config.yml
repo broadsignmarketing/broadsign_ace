@@ -15,19 +15,23 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Image Gallery"
-        name: "gallery"
-        widget: "list"
-        fields:
-        - {label: "Image #1", name: "thumbnail_1", widget: "image", required: false}
-        - {label: "Image #2", name: "thumbnail_2", widget: "image", required: false}
-        - {label: "Image #3", name: "thumbnail_3", widget: "image", required: false}
+    - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Publish Date", name: "date", widget: "datetime"}
+    - {label: "Body", name: "body", widget: "markdown"}
+    - label: "Image Gallery"
+      name: "gallery"
+      widget: "object"
+      fields:
+      - {label: "Image #1", name: "thumbnail_1", widget: "image", required: false}
+      - {label: "Image #2", name: "thumbnail_2", widget: "image", required: false}
+      - {label: "Image #3", name: "thumbnail_3", widget: "image", required: false}
+    - label: "Categories"
+      name: "categories"
+      widget: "object"
+      fields:
       - label: "Products"
-        name: "Products"
+        name: "products"
         widget: "object"
         fields:
         - {label: "Broadsign Control", name: "broadsign_control", widget: "boolean", default: false, required: false}
@@ -36,7 +40,7 @@ collections:
         - {label: "Broadsign Publish", name: "broadsign_publish", widget: "boolean", default: false, required: false}
         - {label: "Broadsign Reach", name: "broadsign_reach", widget: "boolean", default: false, required: false}
       - label: "Verticals"
-        name: "Verticals"
+        name: "verticals"
         widget: "object"
         fields:
         - {label: "Cinema", name: "cinema", widget: "boolean", default: false, required: false}
