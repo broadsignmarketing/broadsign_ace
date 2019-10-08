@@ -8,15 +8,11 @@ gallery:
   thumbnail_3: /images/uploads/hero_xite_3.jpg
 categories:
   products:
-    broadsign_creator: false
-    broadsign_publish: false
-  products_2:
-    - broadsign_control
+    - broadsign_creator
     - broadsign_reach
   verticals:
-    gas_stations: true
-    healthcare: false
-    internal_comms: true
-    shopping_malls: true
+    - internal_comms
+    - gas_stations
+    - cinema
 ---
 So much Xitement !
