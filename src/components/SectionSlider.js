@@ -17,10 +17,24 @@ function SectionSlider(props, { data }) {
 
 export default SectionSlider;
 
-/*
 export const sectionContent = graphql `
 	query Sections {
-
+		allMarkdownRemark {
+			edges {
+				node {
+					frontmatter {
+						gallery {
+							thumbnail_1
+							thumbnail_2
+							thumbnail_3
+						}
+						categories {
+							products
+							verticals
+						}
+					}
+				}
+			}
+		}
 	}
 `
-*/
