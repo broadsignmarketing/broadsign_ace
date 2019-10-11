@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: lekevoid/broadsign_ace_gatsby
+  repo: broadsignmarketing/broadsign_ace
   branch: master # Branch to update (optional; defaults to master)
   squash_merges: true
 
