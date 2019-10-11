@@ -86,7 +86,7 @@ function IndexPage(props) {
 				</div>
 				<div className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					{section !== "" && subSection !== "none" ? <SectionSlider main={section} sub={subSection} /> : null}
-					<button onClick={() => { setClientsSliderActive("") }}>X</button>
+					<button className="close" onClick={() => { setClientsSliderActive("") }}>X</button>
 				</div>
 			</div>
 		</Layout>
@@ -134,6 +134,23 @@ export const queryTiles = graphql `
 							aspectRatio
 							src
 							srcSet
+						}
+					}
+				}
+			}
+		}
+	}
+
+	query Sections {
+		slides: allMarkdownRemark {
+			edges {
+				node {
+					frontmatter {
+						title
+						gallery
+						categories {
+							products
+							verticals
 						}
 					}
 				}

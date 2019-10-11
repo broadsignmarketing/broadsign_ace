@@ -50,7 +50,8 @@ body {
 	padding: 0;
 }
 
-#global {
+#global,
+main {
 	background-color: #000;
 	display: flex;
 	height: 100vh;
@@ -74,5 +75,13 @@ body {
 	&>.inner {
 		@include cover;
 		background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
+	}
+}
+
+@media only screen and (orientation:portrait) {
+	#app {
+		height: 100vw;
+		transform: translate(-50%, -50%) rotate(90deg);
+		width: 100vh;
 	}
 }
