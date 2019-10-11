@@ -1,5 +1,4 @@
 .section_slider {
-	background-color: rgba(red, 0.6);
 	height: 100%;
 	left: 0;
 	pointer-events: none;
@@ -23,13 +22,35 @@
 		width: 80%;
 	}
 
-	&>.slick-slider {
+	.slick-list,
+	.slick-track {
+		height: 100%;
+		width: 100%;
+	}
 
-		&,
-		&>.slick-list,
-		&>.slick-list>.slick-track {
-			@include cover;
-			display: flex;
+	&>.slick-slider {
+		@include cover;
+		display: flex;
+
+		&>.slick-list {
+			&>.slick-track {
+				align-items: stretch;
+				display: flex;
+
+				&>.slick-slide {
+					align-items: center;
+					display: inline-flex;
+					height: 100%;
+					justify-content: center;
+					max-height: 100%;
+					position: relative;
+
+					&>div {
+						@include cover;
+						display: flex;
+					}
+				}
+			}
 		}
 	}
 }

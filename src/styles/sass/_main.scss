@@ -38,77 +38,77 @@
 		user-select: none;
 		width: 100%;
 	}
-}
 
-.slick-list {}
+	&>.slick-list {
+		&>.slick-track {
+			align-items: stretch;
+			display: flex;
 
-.slick-track {
-	align-items: stretch;
-	display: flex;
-}
+			&>.slick-slide {
+				align-items: center;
+				display: inline-flex;
+				height: 100%;
+				justify-content: center;
+				max-height: 100%;
+				position: relative;
 
-.slick-slide {
-	align-items: center;
-	display: inline-flex;
-	height: 100%;
-	justify-content: center;
-	max-height: 100%;
-	position: relative;
+				&>div {
+					@include cover;
+					display: flex;
+				}
+			}
+		}
+	}
 
-	&>div {
+	.slide {
 		@include cover;
-		display: flex;
-	}
-}
 
-.slide {
-	@include cover;
-
-	.tile_set {
-		align-content: center;
-		align-items: center;
-		display: flex !important;
-		flex-flow: row wrap;
-		height: 80%;
-		justify-content: center;
-		margin: 0 16%;
-		width: 68% !important;
-	}
-
-	.tile {
-		display: inline-flex;
-		flex: 0 0 calc(33.333333% - 1rem);
-		margin: 0.4rem 0.5rem;
-		width: calc(33.333333% - 1rem);
-
-		.gatsby-image-wrapper {
-			height: 100% !important;
-			width: 100% !important;
+		.tile_set {
+			align-content: center;
+			align-items: center;
+			display: flex !important;
+			flex-flow: row wrap;
+			height: 80%;
+			justify-content: center;
+			margin: 0 16%;
+			width: 68% !important;
 		}
 
-		/*
-		&:hover,
-		&:focus {
-			animation: tilePress 0.3s ease-out;
-		}
-		*/
-	}
-
-	&.products {
 		.tile {
-			flex: 0 0 calc(25% - 1rem);
-			width: calc(25% - 1rem);
-		}
-	}
+			display: inline-flex;
+			flex: 0 0 calc(33.333333% - 1rem);
+			margin: 0.4rem 0.5rem;
+			width: calc(33.333333% - 1rem);
 
-	&.programmatic {
-		.tile {
-			flex: 0 0 calc(25% - 1rem);
-			width: calc(25% - 1rem);
-		}
-	}
+			.gatsby-image-wrapper {
+				height: 100% !important;
+				width: 100% !important;
+			}
 
-	&.verticals {
-		.tile {}
+			/*
+			&:hover,
+			&:focus {
+				animation: tilePress 0.3s ease-out;
+			}
+			*/
+		}
+
+		&.products {
+			.tile {
+				flex: 0 0 calc(25% - 1rem);
+				width: calc(25% - 1rem);
+			}
+		}
+
+		&.programmatic {
+			.tile {
+				flex: 0 0 calc(25% - 1rem);
+				width: calc(25% - 1rem);
+			}
+		}
+
+		&.verticals {
+			.tile {}
+		}
 	}
 }

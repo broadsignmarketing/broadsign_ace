@@ -8,8 +8,18 @@ function SectionSlider(props) {
 
 	const [currentClient, setCurrentClient] = useState("");
 
+	const sliderSettings = {
+		arrows: false,
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		className: "client_slider"
+	};
+
 	return (
-		<Slider>
+		<Slider {...sliderSettings}>
 			{ slides.map((s, i) => {
 				return (<ClientSlide {...s} key={i} />)
 			})}

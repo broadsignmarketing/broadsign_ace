@@ -1,7 +1,9 @@
 .client_slide {
 	align-items: stretch;
+	background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
 	display: flex;
 	flex-flow: row nowrap;
+	width: 100%;
 
 	.hero {
 		display: flex;
@@ -16,6 +18,15 @@
 
 		.bg {
 			@include cover;
+			object-fit: cover;
+			object-position: center center;
+			opacity: 0;
+			transition: opacity 0.3s;
+			z-index: 1;
+
+			&.active {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -25,7 +36,6 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-end;
-		opacity: 0;
 		pointer-events: all;
 		position: absolute;
 		right: 10px;
@@ -41,6 +51,8 @@
 			flex: 1 1 100%;
 			height: 7vw;
 			margin-left: 10px;
+			object-fit: cover;
+			object-position: center center;
 			pointer-events: all;
 			width: 9vw;
 
@@ -53,10 +65,74 @@
 	.content {
 		display: flex;
 		flex: 0 0 40%;
+		flex-flow: column nowrap;
+		font-size: 100px;
 		height: 100%;
+		justify-content: center;
 		max-width: 40%;
+		padding: 55px 3%;
 		position: relative;
+		user-select: none;
 		width: 40%;
 		z-index: 10;
+
+		&>.text {
+			color: inherit;
+			display: flex;
+			flex-flow: column nowrap;
+			font-size: inherit;
+			font-weight: inherit;
+		}
+
+		h1 {
+			color: #83DBE7;
+			display: inline-block;
+			font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+			font-size: .72em;
+			font-variant: small-caps;
+			left: -2px;
+			line-height: 80%;
+			margin: 0 0 30px;
+			position: relative;
+			text-transform: lowercase;
+			top: 0;
+			transform: none;
+		}
+
+		h2 {
+			color: #83DBE7;
+			display: inline-block;
+			font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+			font-size: .22em;
+			line-height: 120%;
+			margin: -20px 0 25px;
+			text-transform: uppercase;
+		}
+
+		h3 {
+			color: #FFF;
+			display: inline-block;
+			font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+			font-size: .18em;
+			margin: 0 0 15px;
+			text-transform: uppercase;
+		}
+
+		p {
+			color: #FFF;
+			display: inline-block;
+			font-family: "Roboto", Arial, Helvetica, sans-serif;
+			font-size: .15em;
+			line-height: 160%;
+			margin: 0 0 30px;
+
+			&.slides_count {
+				bottom: 15px;
+				margin: 0;
+				pointer-events: none;
+				position: absolute;
+				right: 15px;
+			}
+		}
 	}
 }

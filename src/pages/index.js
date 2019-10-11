@@ -44,7 +44,7 @@ function IndexPage(props) {
 			if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
 				const mapReturn = {
 					"title" : s.node.frontmatter.title,
-					"content" : s.node.internal.content,
+					"content" : s.node.html,
 					"products" : s.node.frontmatter.categories.products,
 					"verticals" : s.node.frontmatter.categories.verticals,
 					"gallery" : s.node.frontmatter.gallery
@@ -164,9 +164,7 @@ export const queryTiles = graphql `
 		slides: allMarkdownRemark {
 			edges {
 				node {
-					internal {
-						content
-					}
+					html
 					frontmatter {
 						title
 						gallery
