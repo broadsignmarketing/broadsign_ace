@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState/*, useEffect*/ } from "react";
 import Slider from "react-slick";
 import { graphql } from "gatsby";
+import { Swipeable } from "react-swipeable";
 import classnames from "classnames";
 
 import Layout from "../components/layout";
@@ -14,10 +15,18 @@ function IndexPage(props) {
 	const [section, setSection] = useState("products");
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
+	const [slides, setSlides] = useState(null);
 
 	const updateSections = (main, sub) => {
 		setSection(main);
 		setSubSection(sub);
+
+		if (subSection === "none") {
+			setClientsSliderActive("");
+		} else {
+			setClientsSliderActive("active");
+			setSlides(filterSlides(section, subSection));
+		}
 	}
 
 	const sliderSettings = {
@@ -30,13 +39,23 @@ function IndexPage(props) {
 		className: "main_slider"
 	};
 
-	useEffect(() => {
-		if (subSection === "none") {
-			setClientsSliderActive("");
-		} else {
-			setClientsSliderActive("active");
-		}
-	}, [subSection]);
+	const filterSlides = () => {
+		const r = data.slides.edges.map((s) => {
+			if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
+				const mapReturn = {
+					"title" : s.node.frontmatter.title,
+					"content" : s.node.internal.content,
+					"products" : s.node.frontmatter.categories.products,
+					"verticals" : s.node.frontmatter.categories.verticals,
+					"gallery" : s.node.frontmatter.gallery
+				}
+				return mapReturn;
+			}
+			return false;
+		});
+
+		return r.filter(Boolean);
+	}
 
 	return (
 		<Layout className="Blah">
@@ -46,10 +65,10 @@ function IndexPage(props) {
 						<div className="slide products">
 							<h1>Products</h1>
 							<div className="tile_set">
-								{data.productsTiles.edges.map((e) => {
+								{data.productsTiles.edges.map((e, i) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
 									return (
-										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("products", subsection); }} key={e.node.childImageSharp.id}>
+										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("products", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain"  />
 										</a>
 									)
@@ -62,7 +81,7 @@ function IndexPage(props) {
 								{data.programmaticTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
 									return (
-										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("programmatic", subsection); }} key={e.node.childImageSharp.id}>
+										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("programmatic", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
 										</a>
 									)
@@ -75,7 +94,7 @@ function IndexPage(props) {
 								{data.verticalsTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
 									return (
-										<a href={(e) => e.preventDefault() } className="tile" onClick={() => { updateSections("verticals", subsection); }} key={e.node.childImageSharp.id}>
+										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("verticals", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
 										</a>
 									)
@@ -84,10 +103,9 @@ function IndexPage(props) {
 						</div>
 					</Slider>
 				</div>
-				<div className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
-					{section !== "" && subSection !== "none" ? <SectionSlider main={section} sub={subSection} /> : null}
-					<button className="close" onClick={() => { setClientsSliderActive("") }}>X</button>
-				</div>
+				<Swipeable onSwipedDown={ () => setClientsSliderActive("") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
+					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
+				</Swipeable>
 			</div>
 		</Layout>
 	)
@@ -102,6 +120,7 @@ export const queryTiles = graphql `
 				node {
 					relativePath
 					childImageSharp {
+						id
 						fluid {
 							aspectRatio
 							src
@@ -116,6 +135,7 @@ export const queryTiles = graphql `
 				node {
 					relativePath
 					childImageSharp {
+						id
 						fluid {
 							aspectRatio
 							src
@@ -130,6 +150,7 @@ export const queryTiles = graphql `
 				node {
 					relativePath
 					childImageSharp {
+						id
 						fluid {
 							aspectRatio
 							src
@@ -139,12 +160,13 @@ export const queryTiles = graphql `
 				}
 			}
 		}
-	}
 
-	query Sections {
 		slides: allMarkdownRemark {
 			edges {
 				node {
+					internal {
+						content
+					}
 					frontmatter {
 						title
 						gallery

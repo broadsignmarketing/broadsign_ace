@@ -23,12 +23,13 @@
 		width: 80%;
 	}
 
-	button.close {
-		border-radius: 6px;
-		font-size: 30px;
-		left: 10px;
-		padding: 6px 12px;
-		position: relative;
-		top: 10px;
+	&>.slick-slider {
+
+		&,
+		&>.slick-list,
+		&>.slick-list>.slick-track {
+			@include cover;
+			display: flex;
+		}
 	}
 }

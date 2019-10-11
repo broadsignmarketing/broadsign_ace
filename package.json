@@ -21,7 +21,8 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
-    "react-slick": "^0.25.2"
+    "react-slick": "^0.25.2",
+    "react-swipeable": "^5.4.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

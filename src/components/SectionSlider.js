@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import Slider from "react-slick";
+
+import ClientSlide from "./ClientSlide";
 
 function SectionSlider(props) {
-	const {main, sub} = props;
+	const {slides} = props;
 
 	const [currentClient, setCurrentClient] = useState("");
 
-	let slides = [];
-
-	useEffect(() => {
-	}, []);
-
-
-	console.log(slides);
-
 	return (
-		<div className="inner">
-			<div className="hero"></div>
-			<div className="gallery"></div>
-			<h1>{main}</h1>
-			<h2>{sub}</h2>
-			<h3>Slides :</h3>
-			<h3>Current Slide :</h3>
-		</div>
+		<Slider>
+			{ slides.map((s, i) => {
+				return (<ClientSlide {...s} key={i} />)
+			})}
+		</Slider>
 	)
 }
 

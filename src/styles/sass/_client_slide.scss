@@ -1,0 +1,62 @@
+.client_slide {
+	align-items: stretch;
+	display: flex;
+	flex-flow: row nowrap;
+
+	.hero {
+		display: flex;
+		flex: 0 0 60%;
+		height: 100%;
+		max-width: 60%;
+		opacity: 1;
+		overflow: hidden;
+		position: relative;
+		width: 60%;
+		z-index: 100;
+
+		.bg {
+			@include cover;
+		}
+	}
+
+	.gallery {
+		align-items: center;
+		bottom: 10px;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		opacity: 0;
+		pointer-events: all;
+		position: absolute;
+		right: 10px;
+		transition: opacity 0s linear 0s;
+		z-index: 1000;
+
+		.thumb {
+			background-color: #000;
+			background-size: cover;
+			border: 3px solid #000;
+			border-radius: 20px;
+			display: inline-block;
+			flex: 1 1 100%;
+			height: 7vw;
+			margin-left: 10px;
+			pointer-events: all;
+			width: 9vw;
+
+			&.active {
+				border-color: #7BC;
+			}
+		}
+	}
+
+	.content {
+		display: flex;
+		flex: 0 0 40%;
+		height: 100%;
+		max-width: 40%;
+		position: relative;
+		width: 40%;
+		z-index: 10;
+	}
+}

@@ -1,3 +1,19 @@
+/*
+@keyframes tilePress {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+*/
+
 .main_slider {
 	position: relative;
 	z-index: 1;
@@ -69,6 +85,13 @@
 			height: 100% !important;
 			width: 100% !important;
 		}
+
+		/*
+		&:hover,
+		&:focus {
+			animation: tilePress 0.3s ease-out;
+		}
+		*/
 	}
 
 	&.products {
