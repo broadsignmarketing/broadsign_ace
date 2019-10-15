@@ -335,6 +335,7 @@ main {
   text-transform: lowercase;
   top: 0;
   transform: none;
+  width: fit-content;
 }
 .client_slide .content > .text {
   color: inherit;

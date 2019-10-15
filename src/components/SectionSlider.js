@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React /*, { useState, useEffect } */ from "react";
 import Slider from "react-slick";
 
 import ClientSlide from "./ClientSlide";
 
 function SectionSlider(props) {
-	const {slides, main, sub} = props;
+	const {slides} = props;
 
-	const [currentClient, setCurrentClient] = useState("");
+	// const [currentClient, setCurrentClient] = useState("");
 
 	const sliderSettings = {
 		arrows: false,

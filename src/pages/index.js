@@ -5,7 +5,6 @@ import { graphql } from "gatsby";
 import { Swipeable } from "react-swipeable";
 import classnames from "classnames";
 
-import Layout from "../components/layout";
 import Img from "gatsby-image/withIEPolyfill";
 import SectionSlider from "../components/SectionSlider";
 
@@ -48,6 +47,7 @@ function IndexPage(props) {
 			const r = data.slides.edges.map((s) => {
 				if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
 					const mapReturn = {
+						"id" : s.node.id,
 						"title" : s.node.frontmatter.title,
 						"content" : s.node.html,
 						"products" : s.node.frontmatter.categories.products,
@@ -68,7 +68,7 @@ function IndexPage(props) {
 	}, [section, subSection, data.slides.edges]);
 
 	return (
-		<Layout className="Blah">
+		<div id="global">
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider {...sliderSettings}>
@@ -114,10 +114,10 @@ function IndexPage(props) {
 					</Slider>
 				</Swipeable>
 				<Swipeable onSwipedDown={ () => closeSections() } onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
-					{slides && slides.length > 0 ? <SectionSlider slides={slides} main={section} sub={subSection} /> : null}
+					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
 				</Swipeable>
 			</div>
-		</Layout>
+		</div>
 	)
 }
 
@@ -174,6 +174,7 @@ export const queryTiles = graphql `
 		slides: allMarkdownRemark(sort: {fields: frontmatter___title}) {
 			edges {
 				node {
+					id
 					html
 					frontmatter {
 						title
