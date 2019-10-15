@@ -30,6 +30,7 @@ collections:
         name: "products"
         widget: "select"
         multiple: true
+        required: false
         options:
         - {label: "Broadsign Control", value: "broadsign_control"}
         - {label: "Broadsign Creator", value: "broadsign_creator"}
@@ -40,6 +41,7 @@ collections:
         name: "verticals"
         widget: "select"
         multiple: true
+        required: false
         options:
         - {label: "Cinema", value: "cinema"}
         - {label: "Gas Stations", value: "gas_stations"}
@@ -50,3 +52,4 @@ collections:
         - {label: "Shopping Malls", value: "shopping_malls"}
         - {label: "Smart Cities", value: "smart_cities"}
         - {label: "Transit", value: "transit"}
+      - {label: "Programmatic", name: "programmatic", widget: "boolean", default: false}

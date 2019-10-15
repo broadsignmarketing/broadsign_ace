@@ -179,7 +179,7 @@ main {
 }
 
 .section_slider {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 20, 100, 0.5);
   height: 100%;
   left: 0;
   pointer-events: none;
@@ -320,13 +320,6 @@ main {
   width: 40%;
   z-index: 10;
 }
-.client_slide .content > .text {
-  color: inherit;
-  display: flex;
-  flex-flow: column nowrap;
-  font-size: inherit;
-  font-weight: inherit;
-}
 .client_slide .content h1 {
   color: #83DBE7;
   display: inline-block;
@@ -341,7 +334,14 @@ main {
   top: 0;
   transform: none;
 }
-.client_slide .content h2 {
+.client_slide .content > .text {
+  color: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.client_slide .content > .text h1 {
   color: #83DBE7;
   display: inline-block;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
@@ -350,7 +350,7 @@ main {
   margin: -20px 0 25px;
   text-transform: uppercase;
 }
-.client_slide .content h3 {
+.client_slide .content > .text h2 {
   color: #FFF;
   display: inline-block;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
@@ -358,7 +358,7 @@ main {
   margin: 0 0 15px;
   text-transform: uppercase;
 }
-.client_slide .content p {
+.client_slide .content > .text p {
   color: #FFF;
   display: inline-block;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -366,7 +366,7 @@ main {
   line-height: 160%;
   margin: 0 0 30px;
 }
-.client_slide .content p.slides_count {
+.client_slide .content > .text p.slides_count {
   bottom: 15px;
   margin: 0;
   pointer-events: none;
