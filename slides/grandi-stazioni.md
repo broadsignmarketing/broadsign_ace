@@ -2,6 +2,8 @@
 layout: blog
 title: Grandi Stazioni
 date: 2019-10-15T17:26:46.003Z
+gallery:
+  - /images/uploads/hero_grandi_stazioni_1.jpg
 categories:
   products:
     - broadsign_control
