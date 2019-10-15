@@ -9,7 +9,7 @@ gallery:
 categories:
   products:
     - broadsign_control
-  programmatic: false
+  programmatic: true
   verticals:
     - cinema
 ---
