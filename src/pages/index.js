@@ -79,7 +79,7 @@ function IndexPage(props) {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
 									return (
 										<button id={subsection} className="tile" onClick={(e) => { openSection("products", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain"  />
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
 								})}
@@ -92,7 +92,7 @@ function IndexPage(props) {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
 									return (
 										<button id={subsection} className="tile" onClick={(e) => { openSection("programmatic", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
 								})}
@@ -105,7 +105,7 @@ function IndexPage(props) {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
 									return (
 										<button id={subsection} className="tile" onClick={(e) => { openSection("verticals", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
+											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
 								})}
