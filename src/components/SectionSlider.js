@@ -1,12 +1,10 @@
-import React /*, { useState, useEffect } */ from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 
 import ClientSlide from "./ClientSlide";
 
 function SectionSlider(props) {
 	const {slides} = props;
-
-	// const [currentClient, setCurrentClient] = useState("");
 
 	const sliderSettings = {
 		arrows: false,
@@ -17,6 +15,9 @@ function SectionSlider(props) {
 		slidesToScroll: 1,
 		className: "client_slider"
 	};
+
+	useEffect(() => {
+	}, []);
 
 	return (
 		<Slider {...sliderSettings}>

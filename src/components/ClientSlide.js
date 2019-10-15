@@ -5,24 +5,41 @@ function ClientSlide(props) {
 	const {id, title, content, gallery, products /*, verticals */ } = props;
 	const [currentImg, setCurrentImg] = useState(0);
 	const [slideFontSize, setSlideFontSize] = useState(100);
+	const [slideTitleFontSize, setSlideTitleFontSize] = useState(72);
 	const productsList = (products && products.length > 0 ? products.join(", ").replace(/_/g, " ") : []);
 
 	useEffect(() => {
 		const adjustFontSizes = () => {
+			const adjustGeneralFontSizes = async () => {
+				const domMaxHeight = 768;
+				const domTextHeight = document.querySelector("#slide_"+id+" .content").offsetHeight;
+
+				if (domTextHeight > domMaxHeight) {
+					setSlideFontSize(slideFontSize-1);
+				}
+			}
+
 			const adjustTitleFontSizes = async () => {
 				const domMaxWitdh = document.querySelector("#slide_"+id+" .content .text").offsetWidth;
 				const domTitleWidth = document.querySelector("#slide_"+id+" h1").offsetWidth;
 
 				if (domTitleWidth > domMaxWitdh) {
-					setSlideFontSize(slideFontSize-1);
+					setSlideTitleFontSize(slideTitleFontSize-1);
 				}
 			}
 
+			adjustGeneralFontSizes();
 			adjustTitleFontSizes();
 		}
 
-		adjustFontSizes();
-	}, [id, title, slideFontSize]);
+		setTimeout(() => { adjustFontSizes() }, 50);
+	}, [id, title, slideFontSize, slideTitleFontSize]);
+
+	useEffect(() => {
+		if (currentImg > gallery.length) {
+			setCurrentImg(0);
+		}
+	});
 
 	return (
 		<div className="client_slide" id={"slide_"+id}>
@@ -39,7 +56,7 @@ function ClientSlide(props) {
 				)}
 			</div>
 			<div className="content" style={{fontSize: slideFontSize+"px"}}>
-				<h1>{title}</h1>
+				<h1 style={{fontSize: (slideTitleFontSize/100)+"em"}}>{title}</h1>
 				<div className="text" dangerouslySetInnerHTML={{__html: content}} />
 				<div className="text products">
 					<h2>Products</h2>
