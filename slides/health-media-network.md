@@ -11,11 +11,18 @@ categories:
   verticals:
     - healthcare
 ---
-### Challenge
+## Challenge
+
 Bridge the gap between patients and medical professionals with informative and educational digital signage content.
-### Audience
+
+## Audience
+
 Patients in clinic and hospital waiting rooms
-### Solution
+
+## Solution
+
 HMN uses Broadsign to deliver targeted content to specialty waiting rooms in medical offices across America. It also enables staff to edit some local content for greater relevance.
-### Location
+
+## Location
+
 United States
