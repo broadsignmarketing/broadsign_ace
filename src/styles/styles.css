@@ -316,8 +316,10 @@ main {
   height: fit-content;
   justify-content: center;
   max-width: 40%;
+  opacity: 0;
   padding: 55px 3%;
   position: relative;
+  transition: opacity 0.4s ease-out 0.4s;
   user-select: none;
   width: 40%;
   z-index: 10;
@@ -398,4 +400,8 @@ main {
 }
 .client_slide .content > .text.products p {
   text-transform: capitalize;
+}
+
+.slick-slide.slick-active.slick-current .client_slide .content {
+  opacity: 1;
 }
