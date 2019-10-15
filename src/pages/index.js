@@ -61,11 +61,7 @@ function IndexPage(props) {
 			if (section === "programmatic") {
 				r = data.slides.edges.map((s) => {
 					const pattern = new RegExp("("+subSection.replace(/_/, ".")+")", "i");
-					console.log(pattern);
-					console.log(s.node.frontmatter.title);
-					console.log(s.node.frontmatter.categories.programmatic);
 					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
-						console.log("Success");
 						return buildSlide(s.node);
 					}
 					return false;
@@ -78,7 +74,7 @@ function IndexPage(props) {
 					return false;
 				});
 			}
-			console.table( r.filter(Boolean));
+
 			return r.filter(Boolean);
 		}
 

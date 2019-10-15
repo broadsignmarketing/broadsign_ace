@@ -18,8 +18,6 @@ function SectionSlider(props) {
 		className: "client_slider"
 	};
 
-	console.log(slides);
-
 	return (
 		<Slider {...sliderSettings}>
 			{ slides.map((s, i) => {
