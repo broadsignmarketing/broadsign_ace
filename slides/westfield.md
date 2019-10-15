@@ -11,9 +11,22 @@ gallery:
 categories:
   products:
     - broadsign_control
-    - broadsign_reach
+    - broadsign_direct
   verticals:
-    - hospitality
-    - transit
+    - shopping_malls
 ---
-Such West, So Field !
+## Challenge
+
+Power a digital media network of hundreds of screens located in flagship shopping centers across the US.
+
+## Audience
+
+Shoppers
+
+## Solution
+
+Westfield uses Broadsign's platform to automate content delivery, streamline inventory sales, and transact campaigns programmatically. By integrating Broadsign with audience analytics software, Westfield can better measure the range and impact of advertising on its network.
+
+## Location
+
+United States, United Kingdom
