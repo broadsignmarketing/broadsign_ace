@@ -2,15 +2,17 @@
 	background-color: rgba(#001464, 0.5);
 	height: 100%;
 	left: 0;
+	opacity: 0.2;
 	pointer-events: none;
 	position: absolute;
 	top: 0;
 	transform: translateY(100%);
-	transition: transform 1s ease-out;
+	transition: transform 1s ease-out, opacity 1s ease-out;
 	width: 100%;
 	z-index: 100;
 
 	&.active {
+		opacity: 1;
 		pointer-events: all;
 		transform: translateY(0%);
 	}

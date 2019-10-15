@@ -42,34 +42,35 @@ function IndexPage(props) {
 		className: "main_slider"
 	};
 
+
 	useEffect(() => {
+		const filterSlides = () => {
+			const r = data.slides.edges.map((s) => {
+				if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
+					const mapReturn = {
+						"title" : s.node.frontmatter.title,
+						"content" : s.node.html,
+						"products" : s.node.frontmatter.categories.products,
+						"verticals" : s.node.frontmatter.categories.verticals,
+						"gallery" : s.node.frontmatter.gallery
+					}
+					return mapReturn;
+				}
+				return false;
+			});
+
+			return r.filter(Boolean);
+		}
+
 		if (subSection !== "none") {
 			setSlides(filterSlides(section, subSection));
 		}
-	}, [subSection]);
-
-	const filterSlides = () => {
-		const r = data.slides.edges.map((s) => {
-			if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
-				const mapReturn = {
-					"title" : s.node.frontmatter.title,
-					"content" : s.node.html,
-					"products" : s.node.frontmatter.categories.products,
-					"verticals" : s.node.frontmatter.categories.verticals,
-					"gallery" : s.node.frontmatter.gallery
-				}
-				return mapReturn;
-			}
-			return false;
-		});
-
-		return r.filter(Boolean);
-	}
+	}, [section, subSection, data.slides.edges]);
 
 	return (
 		<Layout className="Blah">
 			<div id="app">
-				<div className="inner">
+				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider {...sliderSettings}>
 						<div className="slide products">
 							<h1>Products</h1>
@@ -111,8 +112,8 @@ function IndexPage(props) {
 							</div>
 						</div>
 					</Slider>
-				</div>
-				<Swipeable onSwipedDown={ () => closeSections() } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
+				</Swipeable>
+				<Swipeable onSwipedDown={ () => closeSections() } onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					{slides && slides.length > 0 ? <SectionSlider slides={slides} main={section} sub={subSection} /> : null}
 				</Swipeable>
 			</div>
