@@ -2,6 +2,11 @@
 layout: blog
 title: Beyond Outdoor
 date: 2019-10-15T16:37:52.644Z
+gallery:
+  - /images/uploads/hero_beyond_outdoor_1.jpg
+  - /images/uploads/hero_beyond_outdoor_2.jpg
+  - /images/uploads/hero_beyond_outdoor_3.jpg
+  - /images/uploads/hero_beyond_outdoor_4.jpg
 categories:
   products:
     - broadsign_control
