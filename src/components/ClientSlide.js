@@ -5,7 +5,7 @@ function ClientSlide(props) {
 	const {id, title, content, gallery, products /*, verticals */ } = props;
 	const [currentImg, setCurrentImg] = useState(0);
 	const [slideFontSize, setSlideFontSize] = useState(100);
-	const productsList = products.join(", ").replace(/_/g, " ");
+	const productsList = (products && products.length > 0 ? products.join(", ").replace(/_/g, " ") : []);
 
 	useEffect(() => {
 		const adjustFontSizes = () => {

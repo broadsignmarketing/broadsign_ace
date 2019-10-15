@@ -1,5 +1,4 @@
-import React, { useState,/*, useEffect*/
-useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import Slider from "react-slick";
 import { graphql } from "gatsby";
 import { Swipeable } from "react-swipeable";
@@ -43,22 +42,43 @@ function IndexPage(props) {
 
 
 	useEffect(() => {
-		const filterSlides = () => {
-			const r = data.slides.edges.map((s) => {
-				if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
-					const mapReturn = {
-						"id" : s.node.id,
-						"title" : s.node.frontmatter.title,
-						"content" : s.node.html,
-						"products" : s.node.frontmatter.categories.products,
-						"verticals" : s.node.frontmatter.categories.verticals,
-						"gallery" : s.node.frontmatter.gallery
-					}
-					return mapReturn;
-				}
-				return false;
-			});
+		const buildSlide = (s) => {
+			const slideReturn = {
+				"id" : s.id,
+				"title" : s.frontmatter.title,
+				"content" : s.html,
+				"products" : s.frontmatter.categories.products,
+				"verticals" : s.frontmatter.categories.verticals,
+				"gallery" : s.frontmatter.gallery
+			}
 
+			return slideReturn;
+		}
+
+		const filterSlides = () => {
+			let r = [];
+
+			if (section === "programmatic") {
+				r = data.slides.edges.map((s) => {
+					const pattern = new RegExp("("+subSection.replace(/_/, ".")+")", "i");
+					console.log(pattern);
+					console.log(s.node.frontmatter.title);
+					console.log(s.node.frontmatter.categories.programmatic);
+					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
+						console.log("Success");
+						return buildSlide(s.node);
+					}
+					return false;
+				});
+			} else {
+				r = data.slides.edges.map((s) => {
+					if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
+						return buildSlide(s.node);
+					}
+					return false;
+				});
+			}
+			console.table( r.filter(Boolean));
 			return r.filter(Boolean);
 		}
 
@@ -66,6 +86,14 @@ function IndexPage(props) {
 			setSlides(filterSlides(section, subSection));
 		}
 	}, [section, subSection, data.slides.edges]);
+
+	useEffect(() => {
+		/* Leave no trace of the fugly #offline below !!! */
+		setTimeout(() => {
+			const rem = document.querySelector("#offline");
+			if (rem) { rem.parentNode.removeChild(rem); }
+		}, 2000);
+	});
 
 	return (
 		<div id="global">
@@ -116,6 +144,12 @@ function IndexPage(props) {
 				<Swipeable onSwipedDown={ () => closeSections() } onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
 				</Swipeable>
+				{/* To force a first load of all the images needed in the app */}
+				<div id="offline">
+					{data.slides.edges.map(s => {
+						return s.node.frontmatter.gallery.map(i => <img src={i} alt="" />)
+					})}
+				</div>
 			</div>
 		</div>
 	)
@@ -180,6 +214,7 @@ export const queryTiles = graphql `
 						title
 						gallery
 						categories {
+							programmatic
 							products
 							verticals
 						}

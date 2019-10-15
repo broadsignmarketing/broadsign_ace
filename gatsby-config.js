@@ -31,8 +31,9 @@ module.exports = {
     {
 		resolve: `gatsby-plugin-manifest`,
 		options: {
-			name: `broadsign-ace`,
+			name: `Broadsign Ace`,
 			short_name: `Ace`,
+			description: `The little ace in your iSleeve`,
 			start_url: `/`,
 			background_color: `#001464`,
 			theme_color: `#001464`,
