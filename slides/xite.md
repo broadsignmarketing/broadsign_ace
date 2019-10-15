@@ -7,10 +7,9 @@ gallery:
   - /images/uploads/hero_xite_2.jpg
   - /images/uploads/hero_xite_3.jpg
 categories:
-  products:
-    - broadsign_creator
-  verticals:
-    - cinema
+  products: []
+  programmatic: true
+  verticals: []
 ---
 > Reaching festival-goers with pogrammatic dooh and mobile
 
