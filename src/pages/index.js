@@ -1,4 +1,5 @@
-import React, { useState/*, useEffect*/ } from "react";
+import React, { useState,/*, useEffect*/
+useEffect} from "react";
 import Slider from "react-slick";
 import { graphql } from "gatsby";
 import { Swipeable } from "react-swipeable";
@@ -15,18 +16,20 @@ function IndexPage(props) {
 	const [section, setSection] = useState("products");
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
-	const [slides, setSlides] = useState(null);
+	const [slides, setSlides] = useState([]);
 
 	const updateSections = (main, sub) => {
 		setSection(main);
 		setSubSection(sub);
+	}
 
-		if (subSection === "none") {
-			setClientsSliderActive("");
-		} else {
-			setClientsSliderActive("active");
-			setSlides(filterSlides(section, subSection));
-		}
+	const openSection = (main, sub) => {
+		setClientsSliderActive("active");
+		updateSections(main, sub);
+	}
+
+	const closeSections = () => {
+		setClientsSliderActive("");
 	}
 
 	const sliderSettings = {
@@ -38,6 +41,12 @@ function IndexPage(props) {
 		slidesToScroll: 1,
 		className: "main_slider"
 	};
+
+	useEffect(() => {
+		if (subSection !== "none") {
+			setSlides(filterSlides(section, subSection));
+		}
+	}, [subSection]);
 
 	const filterSlides = () => {
 		const r = data.slides.edges.map((s) => {
@@ -68,9 +77,9 @@ function IndexPage(props) {
 								{data.productsTiles.edges.map((e, i) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
 									return (
-										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("products", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { openSection("products", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain"  />
-										</a>
+										</button>
 									)
 								})}
 							</div>
@@ -81,9 +90,9 @@ function IndexPage(props) {
 								{data.programmaticTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
 									return (
-										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("programmatic", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { openSection("programmatic", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
-										</a>
+										</button>
 									)
 								})}
 							</div>
@@ -94,17 +103,17 @@ function IndexPage(props) {
 								{data.verticalsTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
 									return (
-										<a href="?section=something" className="tile" onClick={(e) => { e.preventDefault(); updateSections("verticals", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { openSection("verticals", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" />
-										</a>
+										</button>
 									)
 								})}
 							</div>
 						</div>
 					</Slider>
 				</div>
-				<Swipeable onSwipedDown={ () => setClientsSliderActive("") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
-					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
+				<Swipeable onSwipedDown={ () => closeSections() } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
+					{slides && slides.length > 0 ? <SectionSlider slides={slides} main={section} sub={subSection} /> : null}
 				</Swipeable>
 			</div>
 		</Layout>
@@ -115,7 +124,7 @@ export default IndexPage;
 
 export const queryTiles = graphql `
 	query Tiles {
-		productsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex: "/^tile_products_/"}}) {
+		productsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex: "/^tile_products_/"}}, sort: {fields: relativePath}) {
 			edges {
 				node {
 					relativePath
@@ -130,7 +139,7 @@ export const queryTiles = graphql `
 				}
 			}
 		}
-		programmaticTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_programmatic_/" }}) {
+		programmaticTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_programmatic_/" }}, sort: {fields: relativePath}) {
 			edges {
 				node {
 					relativePath
@@ -145,7 +154,7 @@ export const queryTiles = graphql `
 				}
 			}
 		}
-		verticalsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_verticals_/" }}) {
+		verticalsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex : "/^tile_verticals_/" }}, sort: {fields: relativePath}) {
 			edges {
 				node {
 					relativePath
@@ -161,7 +170,7 @@ export const queryTiles = graphql `
 			}
 		}
 
-		slides: allMarkdownRemark {
+		slides: allMarkdownRemark(sort: {fields: frontmatter___title}) {
 			edges {
 				node {
 					html

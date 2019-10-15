@@ -75,9 +75,12 @@
 		}
 
 		.tile {
+			background: transparent none;
+			border: 0 none;
 			display: inline-flex;
 			flex: 0 0 calc(33.333333% - 1rem);
 			margin: 0.4rem 0.5rem;
+			padding: 0;
 			width: calc(33.333333% - 1rem);
 
 			.gatsby-image-wrapper {

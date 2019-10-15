@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import ClientSlide from "./ClientSlide";
 
 function SectionSlider(props) {
-	const {slides} = props;
+	const {slides, main, sub} = props;
 
 	const [currentClient, setCurrentClient] = useState("");
 

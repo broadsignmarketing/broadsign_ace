@@ -6,7 +6,7 @@ function ClientSlide(props) {
 
 	const [currentImg, setCurrentImg] = useState(0);
 
-	console.log(gallery);
+	//console.log(gallery);
 
 	return (
 		<div className="client_slide">
