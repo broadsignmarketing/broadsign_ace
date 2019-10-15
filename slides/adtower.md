@@ -14,11 +14,18 @@ categories:
   verticals:
     - gas_stations
 ---
-### Challenge
+## Challenge
+
 To help global brands connect with consumers as they enter gas station stores.
-### Audience
+
+## Audience
+
 Drivers and passengers
-### Solution
+
+## Solution
+
 Using Broadsign, Adtower has automated, real-time content management capability that heps it connect with millions of viewers each week. Their system is efficient, flexible, and helps provide high visibility to campaigns running on their network.
-### Location
+
+## Location
+
 Ireland
