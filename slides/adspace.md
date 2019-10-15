@@ -15,11 +15,18 @@ categories:
   verticals:
     - shopping_malls
 ---
-### Challenge
+## Challenge
+
 Reinvent the shopping experience with dynamic HD screens in mall and retail environments.
-### Audience
+
+## Audience
+
 Mall shoppers
-### Solution
+
+## Solution
+
 With Broadsign, Adspace is able to deliver hyper-targeted messaging, lifestyle and entertainment content, and dynamic information relating to weather, trends, and the news across its network.
-### Location
+
+## Location
+
 United States

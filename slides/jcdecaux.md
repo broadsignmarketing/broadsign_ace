@@ -15,11 +15,18 @@ categories:
   verticals:
     - outdoor
 ---
-### Challenge
+## Challenge
+
 Maintain an international digital out-of-home network that includes thousands of screens and digital outdoor furniture installations.
-### Audience
+
+## Audience
+
 Pedestrians, commuters
-### Solution
+
+## Solution
+
 JCDecaux uses Broadsign to power and monitor thousands of displays and installations, many of which incorporate external data streams, interactive technology, or other features. Their network is secure, vibrant, and delivers tremendous value to advertisers.
-### Location
+
+## Location
+
 Worldwide

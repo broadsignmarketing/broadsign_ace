@@ -10,11 +10,18 @@ categories:
   verticals:
     - healthcare
 ---
-### Challenge
+## Challenge
+
 Prepare patients for upcoming appointments and encourage them to make healthy lifestyle choices
-### Audience
+
+## Audience
+
 Patients in healthcare waiting rooms
-### Solution
+
+## Solution
+
 IDS Media uses Broadsign to deliver targeted content to 400 screens in over 100 locations. A survey revealed that 72% of patients found the advertising delivered on the system interesting.
-### Location
+
+## Location
+
 France

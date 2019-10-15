@@ -15,12 +15,20 @@ categories:
   verticals:
     - gas_stations
 ---
-## Improving the travel experience with DOOH
-### Challenge
+> Improving the travel experience with DOOH
+
+## Challenge
+
 Use advertising targeted to people on the go to build revenue and increase impulse buys.
-### Audience
+
+## Audience
+
 Travelers at gas stations & in airports
-### Solution
+
+## Solution
+
 With Broadsign, MMD Media runs 30 campaigns a day on a network of 1,200 screens. These are targeted to specific geographies and types of traveler in each location, increasing relevance and subsequent results.
-### Location
+
+## Location
+
 Netherlands
