@@ -9,10 +9,27 @@ gallery:
 categories:
   products:
     - broadsign_creator
-    - broadsign_reach
   verticals:
-    - internal_comms
-    - gas_stations
     - cinema
 ---
-So much Xitement !
+> Reaching festival-goers with pogrammatic dooh and mobile
+
+## Xite’s Challenge
+
+Deliver advertising to a receptive audience of music festival-goers across the Netherlands.
+
+## Audience
+
+Attendees of music festivals in the Netherlands
+
+## Solution
+
+Using MobPro's mobile location data, Xite was able to purchase DOOH screens located along music festival attendees’ routes to performance venues.
+
+## Results
+
+Xite made itself a part of the festival experience and reached 150,000 festival-goers with its DOOH campaign.
+
+## Campaign Partners
+
+MobPro, Exterion
