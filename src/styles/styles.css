@@ -338,8 +338,28 @@ main {
   color: inherit;
   display: flex;
   flex-flow: column nowrap;
+  font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+}
+.client_slide .content > .text blockquote {
+  color: #83DBE7;
+  display: inline-block;
+  font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+  font-size: .22em;
+  line-height: 120%;
+  margin: -20px 0 25px;
+}
+.client_slide .content > .text blockquote > p {
+  color: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: inherit;
+  font-size: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
 }
 .client_slide .content > .text h1 {
   color: #83DBE7;
@@ -372,4 +392,7 @@ main {
   pointer-events: none;
   position: absolute;
   right: 15px;
+}
+.client_slide .content > .text.products p {
+  text-transform: capitalize;
 }

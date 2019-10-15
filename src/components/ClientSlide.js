@@ -7,6 +7,12 @@ function ClientSlide(props) {
 	const [currentImg, setCurrentImg] = useState(0);
 
 	//console.log(gallery);
+	const unsnake = (str) => {
+		return str.replace(/_/g, " ");
+	}
+
+	const productsList = unsnake(products.join(", "));
+	console.log(productsList);
 
 	return (
 		<div className="client_slide">
@@ -25,6 +31,10 @@ function ClientSlide(props) {
 			<div className="content">
 				<h1>{title}</h1>
 				<div className="text" dangerouslySetInnerHTML={{__html: content}} />
+				<div className="text products">
+					<h2>Products</h2>
+					<p>{productsList}</p>
+				</div>
 			</div>
 		</div>
 	)

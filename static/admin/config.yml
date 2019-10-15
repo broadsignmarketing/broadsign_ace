@@ -43,6 +43,9 @@ collections:
         multiple: true
         required: false
         options:
+        - {label: "Airports", value: "airports"}
+        - {label: "Banking", value: "banking"}
+        - {label: "Casinos", value: "casinos"}
         - {label: "Cinema", value: "cinema"}
         - {label: "Gas Stations", value: "gas_stations"}
         - {label: "Healthcare", value: "healthcare"}

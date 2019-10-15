@@ -95,8 +95,30 @@
 			color: inherit;
 			display: flex;
 			flex-flow: column nowrap;
+			font-family: inherit;
 			font-size: inherit;
 			font-weight: inherit;
+
+			blockquote {
+				color: #83DBE7;
+				display: inline-block;
+				font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+				font-size: .22em;
+				line-height: 120%;
+				margin: -20px 0 25px;
+
+				&>p {
+					color: inherit;
+					display: flex;
+					flex-flow: column nowrap;
+					font-family: inherit;
+					font-size: inherit;
+					font-size: 100%;
+					font-weight: inherit;
+					margin: 0;
+					padding: 0;
+				}
+			}
 
 			h1 {
 				color: #83DBE7;
@@ -131,6 +153,13 @@
 					pointer-events: none;
 					position: absolute;
 					right: 15px;
+				}
+
+			}
+
+			&.products {
+				p {
+					text-transform: capitalize;
 				}
 			}
 		}
