@@ -24,10 +24,21 @@ function IndexPage(props) {
 	const openSection = (main, sub) => {
 		setClientsSliderActive("active");
 		updateSections(main, sub);
+		document.querySelector(".section_slider").click();
 	}
 
 	const closeSections = () => {
 		setClientsSliderActive("");
+	}
+
+	const clickTile = (tile, main, sub) => {
+		tile.classList.add("active");
+		openSection(main, sub);
+		setTimeout(() => {
+			Object.values(document.getElementsByClassName("tile")).forEach((e) => {
+				e.classList.remove("active")
+			});
+		}, 1000);
 	}
 
 	const sliderSettings = {
@@ -102,7 +113,7 @@ function IndexPage(props) {
 								{data.productsTiles.edges.map((e, i) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
 									return (
-										<button id={subsection} className="tile" onClick={(e) => { openSection("products", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "products", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
@@ -115,7 +126,7 @@ function IndexPage(props) {
 								{data.programmaticTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
 									return (
-										<button id={subsection} className="tile" onClick={(e) => { openSection("programmatic", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "programmatic", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
@@ -128,7 +139,7 @@ function IndexPage(props) {
 								{data.verticalsTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
 									return (
-										<button id={subsection} className="tile" onClick={(e) => { openSection("verticals", subsection); }} key={e.node.childImageSharp.id}>
+										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "verticals", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
 										</button>
 									)
