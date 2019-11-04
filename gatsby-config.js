@@ -47,13 +47,14 @@ module.exports = {
 	{
 		resolve: `gatsby-plugin-offline`,
 		options: {
-			workboxConfig: {
-				globPatterns: [
-					'public/*.{json,js,png,jpg,html,css}',
-					'slides/*.{md}'
-				]
-			}
-		},
+			importWorkboxFrom: `local`,
+			globDirectory: 'public',
+			globPatterns: ['*/**'],
+			cacheId: `gatsby-plugin-offline`,
+			skipWaiting: true,
+			clientsClaim: true,
+			directoryIndex: 'index.html',
+		}
 	},
 	{
 		resolve: `gatsby-transformer-remark`,
