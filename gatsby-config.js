@@ -47,13 +47,7 @@ module.exports = {
 	{
 		resolve: `gatsby-plugin-offline`,
 		options: {
-			importWorkboxFrom: `local`,
-			globDirectory: 'public',
-			globPatterns: ['*/**'],
-			cacheId: `gatsby-plugin-offline`,
-			skipWaiting: true,
-			clientsClaim: true,
-			directoryIndex: 'index.html',
+			globPatterns: ['**/*.{js,jpg,png,html,css}'],
 		}
 	},
 	{
