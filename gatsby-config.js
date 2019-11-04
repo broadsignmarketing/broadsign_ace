@@ -46,6 +46,9 @@ module.exports = {
 	},
 	{
 		resolve: `gatsby-plugin-offline`,
+		options: {
+			globPatterns: ['dist/*.{js,png,jpg,html,css}']
+		},
 	},
 	{
 		resolve: `gatsby-transformer-remark`,
