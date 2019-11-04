@@ -47,9 +47,11 @@ module.exports = {
 	{
 		resolve: `gatsby-plugin-offline`,
 		options: {
-			globDirectory: '.',
-			globIgnores: ['node_modules/**/*', '.sass-cache/**/*', '.cache/**/*', '.git/**/*'],
-			globPatterns: ['*.{json,js,png,jpg,html,css}']
+			workboxConfig: {
+				globDirectory: '.',
+				globIgnores: ['node_modules/**/*', '.sass-cache/**/*', '.cache/**/*', '.git/**/*'],
+				globPatterns: ['*.{json,js,png,jpg,html,css,md}']
+			}
 		},
 	},
 	{
