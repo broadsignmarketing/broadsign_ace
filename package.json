@@ -1,31 +1,31 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "broadsign-ace",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Broadsign Ace",
+  "version": "2.1.0",
+  "author": "Kevin Gagnon <gagnon.kev@gmail.com>",
   "dependencies": {
     "classnames": "^2.2.6",
-    "gatsby": "^2.15.29",
-    "gatsby-image": "^2.2.24",
-    "gatsby-plugin-manifest": "^2.2.20",
-    "gatsby-plugin-netlify-cms": "^4.1.22",
-    "gatsby-plugin-offline": "^3.0.11",
-    "gatsby-plugin-react-helmet": "^3.1.10",
-    "gatsby-plugin-sharp": "^2.2.28",
-    "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-remark": "^2.6.27",
-    "gatsby-transformer-sharp": "^2.2.20",
+    "gatsby": "^2.18.13",
+    "gatsby-image": "^2.2.37",
+    "gatsby-plugin-manifest": "^2.2.33",
+    "gatsby-plugin-netlify-cms": "^4.1.33",
+    "gatsby-plugin-offline": "^3.0.29",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-sharp": "^2.3.9",
+    "gatsby-source-filesystem": "^2.1.42",
+    "gatsby-transformer-remark": "^2.6.43",
+    "gatsby-transformer-sharp": "^2.3.9",
     "netlify-cms-app": "^2.9.7",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-slick": "^0.25.2",
-    "react-swipeable": "^5.4.0"
+    "react-swipeable": "^5.5.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "keywords": [
     "gatsby"
@@ -36,7 +36,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "rmdir /q /s .cache | gatsby develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "repository": {

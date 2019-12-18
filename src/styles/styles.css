@@ -281,13 +281,14 @@ main {
   flex: 0 0 60%;
   height: 100%;
   max-width: 60%;
-  opacity: 1;
+  opacity: 0;
   overflow: hidden;
   position: relative;
+  transition: opacity 1s ease-out 0.3s;
   width: 60%;
   z-index: 100;
 }
-/* line 19, sass/_client_slide.scss */
+/* line 20, sass/_client_slide.scss */
 .client_slide .hero .bg {
   flex: 0 0 100%;
   height: 100%;
@@ -303,11 +304,11 @@ main {
   transition: opacity 0.3s;
   z-index: 1;
 }
-/* line 27, sass/_client_slide.scss */
+/* line 28, sass/_client_slide.scss */
 .client_slide .hero .bg.active {
   opacity: 1;
 }
-/* line 33, sass/_client_slide.scss */
+/* line 34, sass/_client_slide.scss */
 .client_slide .gallery {
   align-items: center;
   bottom: 10px;
@@ -320,7 +321,7 @@ main {
   transition: opacity 0s linear 0s;
   z-index: 1000;
 }
-/* line 45, sass/_client_slide.scss */
+/* line 46, sass/_client_slide.scss */
 .client_slide .gallery .thumb {
   background-color: #000;
   background-size: cover;
@@ -328,18 +329,20 @@ main {
   border-radius: 20px;
   display: inline-block;
   flex: 1 1 100%;
-  height: 7vw;
+  height: 72px;
   margin-left: 10px;
+  max-height: 7vmax;
+  max-width: 9vmax;
   object-fit: cover;
   object-position: center center;
   pointer-events: all;
-  width: 9vw;
+  width: 90px;
 }
-/* line 59, sass/_client_slide.scss */
+/* line 62, sass/_client_slide.scss */
 .client_slide .gallery .thumb.active {
   border-color: #7BC;
 }
-/* line 65, sass/_client_slide.scss */
+/* line 68, sass/_client_slide.scss */
 .client_slide .content {
   display: flex;
   flex: 0 0 40%;
@@ -356,7 +359,7 @@ main {
   width: 40%;
   z-index: 10;
 }
-/* line 81, sass/_client_slide.scss */
+/* line 84, sass/_client_slide.scss */
 .client_slide .content h1 {
   color: #83DBE7;
   display: inline-block;
@@ -372,7 +375,7 @@ main {
   transform: none;
   width: fit-content;
 }
-/* line 97, sass/_client_slide.scss */
+/* line 100, sass/_client_slide.scss */
 .client_slide .content > .text {
   color: inherit;
   display: flex;
@@ -381,7 +384,7 @@ main {
   font-size: inherit;
   font-weight: inherit;
 }
-/* line 105, sass/_client_slide.scss */
+/* line 108, sass/_client_slide.scss */
 .client_slide .content > .text blockquote {
   color: #83DBE7;
   display: inline-block;
@@ -390,7 +393,7 @@ main {
   line-height: 120%;
   margin: -20px 0 25px;
 }
-/* line 113, sass/_client_slide.scss */
+/* line 116, sass/_client_slide.scss */
 .client_slide .content > .text blockquote > p {
   color: inherit;
   display: flex;
@@ -402,7 +405,7 @@ main {
   margin: 0;
   padding: 0;
 }
-/* line 126, sass/_client_slide.scss */
+/* line 129, sass/_client_slide.scss */
 .client_slide .content > .text h1 {
   color: #83DBE7;
   display: inline-block;
@@ -412,7 +415,7 @@ main {
   margin: -20px 0 25px;
   text-transform: uppercase;
 }
-/* line 136, sass/_client_slide.scss */
+/* line 139, sass/_client_slide.scss */
 .client_slide .content > .text h2 {
   color: #FFF;
   display: inline-block;
@@ -421,7 +424,7 @@ main {
   margin: 0 0 15px;
   text-transform: uppercase;
 }
-/* line 145, sass/_client_slide.scss */
+/* line 148, sass/_client_slide.scss */
 .client_slide .content > .text p {
   color: #FFF;
   display: inline-block;
@@ -430,7 +433,7 @@ main {
   line-height: 160%;
   margin: 0 0 30px;
 }
-/* line 153, sass/_client_slide.scss */
+/* line 156, sass/_client_slide.scss */
 .client_slide .content > .text p.slides_count {
   bottom: 15px;
   margin: 0;
@@ -438,12 +441,17 @@ main {
   position: absolute;
   right: 15px;
 }
-/* line 164, sass/_client_slide.scss */
+/* line 167, sass/_client_slide.scss */
 .client_slide .content > .text.products p {
   text-transform: capitalize;
 }
 
-/* line 172, sass/_client_slide.scss */
+/* line 175, sass/_client_slide.scss */
 .slick-slide.slick-active.slick-current .client_slide .content {
+  opacity: 1;
+}
+
+/* line 179, sass/_client_slide.scss */
+.section_slider.active .client_slide .hero {
   opacity: 1;
 }
