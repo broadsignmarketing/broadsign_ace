@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import Helmet from "react-helmet"
 import Slider from "react-slick";
 import { graphql } from "gatsby";
 import { Swipeable } from "react-swipeable";
@@ -104,6 +105,7 @@ function IndexPage(props) {
 
 	return (
 		<div id="global">
+			<Helmet title="Broadsign Ace" defer={false} />
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider {...sliderSettings}>
