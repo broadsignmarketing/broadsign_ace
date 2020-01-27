@@ -53,8 +53,8 @@ export default function ClientSlide(props) {
 					<div className="gallery">
 						{gallery.map((img, index) => {
 							return (
-								<button key={"tb"+index} alt="" onClick={() => { setCurrentImg(index) }} className={classnames("thumb", (index === currentImg ? "active" : ""))}>
-									<img src={img} />
+								<button key={"tb"+index} onClick={() => { setCurrentImg(index) }} className={classnames("thumb", (index === currentImg ? "active" : ""))}>
+									<img src={img} alt="" />
 								</button>
 							)
 						})}

@@ -117,11 +117,14 @@ function IndexPage(props) {
 							<div className="tile_set">
 								{data.productsTiles.edges.map((e, i) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "").replace("others_", "");
-									return (
-										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "products", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
-										</button>
-									)
+									if (e && e.node && e.node.childImageSharp && e.node.childImageSharp.fluid) {
+										return (
+											<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "products", subsection); }} key={e.node.childImageSharp.id}>
+												<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
+											</button>
+										);
+									}
+									return null;
 								})}
 							</div>
 						</div>
@@ -130,11 +133,14 @@ function IndexPage(props) {
 							<div className="tile_set">
 								{data.programmaticTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_programmatic_", "");
-									return (
-										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "programmatic", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
-										</button>
-									)
+									if (e && e.node && e.node.childImageSharp && e.node.childImageSharp.fluid) {
+										return (
+											<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "programmatic", subsection); }} key={e.node.childImageSharp.id}>
+												<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
+											</button>
+										);
+									}
+									return null;
 								})}
 							</div>
 						</div>
@@ -143,11 +149,14 @@ function IndexPage(props) {
 							<div className="tile_set">
 								{data.verticalsTiles.edges.map((e) => {
 									const subsection = e.node.relativePath.replace(".png", "").replace("tile_verticals_", "");
-									return (
-										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "verticals", subsection); }} key={e.node.childImageSharp.id}>
-											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
-										</button>
-									)
+									if (e && e.node && e.node.childImageSharp && e.node.childImageSharp.fluid) {
+										return (
+											<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "verticals", subsection); }} key={e.node.childImageSharp.id}>
+												<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />
+											</button>
+										);
+									}
+									return null;
 								})}
 							</div>
 						</div>
@@ -158,8 +167,8 @@ function IndexPage(props) {
 				</Swipeable>
 				{/* To force a first load of all the images needed in the app */}
 				<div id="offline">
-					{data.slides.edges.map(s => {
-						return s.node.frontmatter.gallery.map(i => <img src={i} alt="" />)
+					{data.slides.edges.map((s, key) => {
+						return s.node.frontmatter.gallery.map(i => <img src={i} alt="" key={key} />)
 					})}
 				</div>
 			</div>
@@ -181,6 +190,7 @@ export const queryTiles = graphql `
 							aspectRatio
 							src
 							srcSet
+							sizes
 						}
 					}
 				}
@@ -196,6 +206,7 @@ export const queryTiles = graphql `
 							aspectRatio
 							src
 							srcSet
+							sizes
 						}
 					}
 				}
@@ -211,6 +222,7 @@ export const queryTiles = graphql `
 							aspectRatio
 							src
 							srcSet
+							sizes
 						}
 					}
 				}

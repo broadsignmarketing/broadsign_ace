@@ -25,6 +25,7 @@
     "react-swipeable": "^5.5.0"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.11.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
