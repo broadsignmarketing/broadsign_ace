@@ -54,13 +54,20 @@
 			margin-left: 10px;
 			max-height: 7vmax;
 			max-width: 9vmax;
-			object-fit: cover;
-			object-position: center center;
+			overflow: hidden;
+			padding: 0;
 			pointer-events: all;
 			width: 90px;
 
 			&.active {
 				border-color: #7BC;
+			}
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				object-position: center center;
+				width: 100%;
 			}
 		}
 	}

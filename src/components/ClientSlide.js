@@ -4,7 +4,7 @@ import classnames from "classnames";
 export default function ClientSlide(props) {
 	const {id, title, content, gallery, products /*, verticals */ } = props;
 	const [currentImg, setCurrentImg] = useState(0);
-	const [slideFontSize, setSlideFontSize] = useState(100);
+	// const [slideFontSize, setSlideFontSize] = useState(100);
 	const [slideTitleFontSize, setSlideTitleFontSize] = useState(60);
 	const productsList = (products && products.length > 0 ? products.join(", ").replace(/_/g, " ") : []);
 
@@ -35,7 +35,7 @@ export default function ClientSlide(props) {
 		}
 
 		setTimeout(() => { adjustFontSizes() }, 50);
-	}, [id, title, slideFontSize, slideTitleFontSize]);
+	}, [id, title, /* slideFontSize, */ slideTitleFontSize]);
 
 	useEffect(() => {
 		if (currentImg > gallery.length) {
@@ -52,12 +52,16 @@ export default function ClientSlide(props) {
 				{ gallery.length > 1 && (
 					<div className="gallery">
 						{gallery.map((img, index) => {
-							return (<img src={img} className={classnames("thumb", (index === currentImg ? "active" : ""))} key={"tb"+index} alt="" onClick={() => { setCurrentImg(index) }} />)
+							return (
+								<button key={"tb"+index} alt="" onClick={() => { setCurrentImg(index) }} className={classnames("thumb", (index === currentImg ? "active" : ""))}>
+									<img src={img} />
+								</button>
+							)
 						})}
 					</div>
 				)}
 			</div>
-			<div className="content" style={{fontSize: slideFontSize+"px"}}>
+			<div className="content">
 				<h1 style={{fontSize: (slideTitleFontSize/100)+"em"}}>{title}</h1>
 				<div className="text" dangerouslySetInnerHTML={{__html: content}} />
 				<div className="text products">

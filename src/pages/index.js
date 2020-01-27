@@ -112,7 +112,7 @@ function IndexPage(props) {
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>
-						<div className="slide products">
+						<div className="slide products" key="products">
 							<h1>Products</h1>
 							<div className="tile_set">
 								{data.productsTiles.edges.map((e, i) => {
@@ -125,7 +125,7 @@ function IndexPage(props) {
 								})}
 							</div>
 						</div>
-						<div className="slide programmatic">
+						<div className="slide programmatic" key="programmatic">
 							<h1>Programmatic</h1>
 							<div className="tile_set">
 								{data.programmaticTiles.edges.map((e) => {
@@ -138,7 +138,7 @@ function IndexPage(props) {
 								})}
 							</div>
 						</div>
-						<div className="slide verticals">
+						<div className="slide verticals" key="verticals">
 							<h1>Verticals</h1>
 							<div className="tile_set">
 								{data.verticalsTiles.edges.map((e) => {
