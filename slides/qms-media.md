@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: QMS MEDIA
+title: QMS Media
 date: 2020-01-27T16:20:17.407Z
 gallery:
   - /images/uploads/hero_qms.png
