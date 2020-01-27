@@ -14,19 +14,19 @@ categories:
 ---
 ## CHALLENGE
 
-Become an influential player in China’s DOOH space by capitalizing on large-format displays, audience interactivity and premium locations.
+Become an influential player in China’s DOOH space by capitalizing on large-format displays, audience interactivity and premium locations.
 
 ## AUDIENCE
 
-Pedestrians & Drivers
+Pedestrians & Drivers
 
 ## SOLUTION
 
 To power its premium, technologically complex network, Oriental Sunrise chose Broadsign. The Broadsign platform allows for seamless media synchronicity between panels to deliver stunning visuals on massive scales. Additionally, the unmatched stability of the platform means Oriental Sunrise doesn’t have to worry about service losses or interruptions.
 
-## PRODUCTS 
+## PRODUCTS 
 
-Broadsign Control, Broadsign Reach
+Broadsign Control, Broadsign Reach
 
 ## LOCATION
 
