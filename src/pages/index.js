@@ -108,7 +108,11 @@ function IndexPage(props) {
 
 	return (
 		<div id="global">
-			<Helmet title="Broadsign Ace" defer={false} />
+			<Helmet defer={false}>
+				<title>Broadsign Ace</title>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+			</Helmet>
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>
