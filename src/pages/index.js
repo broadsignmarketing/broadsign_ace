@@ -113,7 +113,7 @@ function IndexPage(props) {
 							<h1>Products</h1>
 							<div className="tile_set">
 								{data.productsTiles.edges.map((e, i) => {
-									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "");
+									const subsection = e.node.relativePath.replace(".png", "").replace("tile_products_", "").replace("others_", "");
 									return (
 										<button id={subsection} className="tile" onClick={(e) => { clickTile(e.target, "products", subsection); }} key={e.node.childImageSharp.id}>
 											<Img fluid={e.node.childImageSharp.fluid} objectFit="contain" loading="eager" />

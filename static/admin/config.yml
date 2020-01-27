@@ -37,6 +37,7 @@ collections:
         - {label: "Broadsign Direct", value: "broadsign_direct"}
         - {label: "Broadsign Publish", value: "broadsign_publish"}
         - {label: "Broadsign Reach", value: "broadsign_reach"}
+        - {label: "Ayuda", value: "ayuda"}
       - label: "Verticals"
         name: "verticals"
         widget: "select"

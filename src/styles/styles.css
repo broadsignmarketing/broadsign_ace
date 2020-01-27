@@ -160,10 +160,11 @@ main {
   flex-flow: row wrap;
   height: 80%;
   justify-content: center;
-  margin: 0 16%;
-  width: 68% !important;
+  margin: 0 10%;
+  max-width: 80%;
+  width: 80%;
 }
-/* line 77, sass/_main.scss */
+/* line 78, sass/_main.scss */
 .main_slider .slide .tile {
   background: transparent none;
   border: 0 none;
@@ -173,25 +174,31 @@ main {
   padding: 0;
   width: calc(33.333333% - 1rem);
 }
-/* line 86, sass/_main.scss */
+/* line 87, sass/_main.scss */
 .main_slider .slide .tile .gatsby-image-wrapper {
   height: 100% !important;
   pointer-events: none;
   width: 100% !important;
 }
-/* line 92, sass/_main.scss */
+/* line 93, sass/_main.scss */
 .main_slider .slide .tile.active {
   animation: tilePress 0.6s ease-out 0s forwards;
 }
-/* line 98, sass/_main.scss */
+/* line 99, sass/_main.scss */
 .main_slider .slide.products .tile {
-  flex: 0 0 calc(25% - 1rem);
-  width: calc(25% - 1rem);
+  flex: 0 0 calc(20% - 1rem);
+  width: calc(20% - 1rem);
 }
-/* line 105, sass/_main.scss */
+/* line 106, sass/_main.scss */
 .main_slider .slide.programmatic .tile {
-  flex: 0 0 calc(25% - 1rem);
-  width: calc(25% - 1rem);
+  flex: 0 0 calc(20% - 1rem);
+  width: calc(20% - 1rem);
+}
+/* line 113, sass/_main.scss */
+.main_slider .slide.verticals .tile_set {
+  margin: 0 16%;
+  max-width: 68% !important;
+  width: 68% !important;
 }
 
 /* line 1, sass/_section_slider.scss */

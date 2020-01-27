@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classnames from "classnames";
 
-function ClientSlide(props) {
+export default function ClientSlide(props) {
 	const {id, title, content, gallery, products /*, verticals */ } = props;
 	const [currentImg, setCurrentImg] = useState(0);
 	const [slideFontSize, setSlideFontSize] = useState(100);
@@ -28,7 +28,7 @@ function ClientSlide(props) {
 				}
 			}
 
-			adjustGeneralFontSizes();
+			// adjustGeneralFontSizes();
 			adjustTitleFontSizes();
 		}
 
@@ -39,7 +39,7 @@ function ClientSlide(props) {
 		if (currentImg > gallery.length) {
 			setCurrentImg(0);
 		}
-	});
+	}, [currentImg, gallery.length]);
 
 	return (
 		<div className="client_slide" id={"slide_"+id}>
@@ -66,5 +66,3 @@ function ClientSlide(props) {
 		</div>
 	)
 }
-
-export default ClientSlide;

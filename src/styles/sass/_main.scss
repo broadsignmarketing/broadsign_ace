@@ -70,8 +70,9 @@
 			flex-flow: row wrap;
 			height: 80%;
 			justify-content: center;
-			margin: 0 16%;
-			width: 68% !important;
+			margin: 0 10%;
+			max-width: 80%;
+			width: 80%;
 		}
 
 		.tile {
@@ -96,19 +97,25 @@
 
 		&.products {
 			.tile {
-				flex: 0 0 calc(25% - 1rem);
-				width: calc(25% - 1rem);
+				flex: 0 0 calc(20% - 1rem);
+				width: calc(20% - 1rem);
 			}
 		}
 
 		&.programmatic {
 			.tile {
-				flex: 0 0 calc(25% - 1rem);
-				width: calc(25% - 1rem);
+				flex: 0 0 calc(20% - 1rem);
+				width: calc(20% - 1rem);
 			}
 		}
 
 		&.verticals {
+			.tile_set {
+				margin: 0 16%;
+				max-width: 68% !important;
+				width: 68% !important;
+			}
+
 			.tile {}
 		}
 	}
