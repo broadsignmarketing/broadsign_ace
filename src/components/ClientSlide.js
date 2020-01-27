@@ -5,11 +5,12 @@ export default function ClientSlide(props) {
 	const {id, title, content, gallery, products /*, verticals */ } = props;
 	const [currentImg, setCurrentImg] = useState(0);
 	const [slideFontSize, setSlideFontSize] = useState(100);
-	const [slideTitleFontSize, setSlideTitleFontSize] = useState(72);
+	const [slideTitleFontSize, setSlideTitleFontSize] = useState(60);
 	const productsList = (products && products.length > 0 ? products.join(", ").replace(/_/g, " ") : []);
 
 	useEffect(() => {
 		const adjustFontSizes = () => {
+			/*
 			const adjustGeneralFontSizes = async () => {
 				const domMaxHeight = 768;
 				const domTextHeight = document.querySelector("#slide_"+id+" .content").offsetHeight;
@@ -18,6 +19,7 @@ export default function ClientSlide(props) {
 					setSlideFontSize(slideFontSize-1);
 				}
 			}
+			*/
 
 			const adjustTitleFontSizes = async () => {
 				const domMaxWitdh = document.querySelector("#slide_"+id+" .content .text").offsetWidth;

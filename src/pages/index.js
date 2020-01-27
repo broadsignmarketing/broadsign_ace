@@ -100,15 +100,18 @@ function IndexPage(props) {
 		setTimeout(() => {
 			const rem = document.querySelector("#offline");
 			if (rem) { rem.parentNode.removeChild(rem); }
+
+			const mainSlider = document.querySelector(".main_slider");
+			mainSlider.focus();
 		}, 2000);
-	});
+	}, []);
 
 	return (
 		<div id="global">
 			<Helmet title="Broadsign Ace" defer={false} />
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
-					<Slider {...sliderSettings}>
+					<Slider id="main_slider" name="main_slider" {...sliderSettings}>
 						<div className="slide products">
 							<h1>Products</h1>
 							<div className="tile_set">

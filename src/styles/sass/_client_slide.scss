@@ -85,7 +85,7 @@
 			color: #83DBE7;
 			display: inline-block;
 			font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
-			font-size: .72em;
+			font-size: .6em;
 			font-variant: small-caps;
 			left: -2px;
 			line-height: 80%;
@@ -121,6 +121,7 @@
 					font-size: inherit;
 					font-size: 100%;
 					font-weight: inherit;
+					line-height: 140%;
 					margin: 0;
 					padding: 0;
 				}
@@ -140,8 +141,8 @@
 				color: #FFF;
 				display: inline-block;
 				font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
-				font-size: .18em;
-				margin: 0 0 15px;
+				font-size: .16em;
+				margin: 0 0 .5em;
 				text-transform: uppercase;
 			}
 
@@ -149,7 +150,7 @@
 				color: #FFF;
 				display: inline-block;
 				font-family: "Roboto", Arial, Helvetica, sans-serif;
-				font-size: .15em;
+				font-size: .13em;
 				line-height: 160%;
 				margin: 0 0 30px;
 

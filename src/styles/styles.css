@@ -191,8 +191,8 @@ main {
 }
 /* line 106, sass/_main.scss */
 .main_slider .slide.programmatic .tile {
-  flex: 0 0 calc(20% - 1rem);
-  width: calc(20% - 1rem);
+  flex: 0 0 calc(22% - 1rem);
+  width: calc(22% - 1rem);
 }
 /* line 113, sass/_main.scss */
 .main_slider .slide.verticals .tile_set {
@@ -371,7 +371,7 @@ main {
   color: #83DBE7;
   display: inline-block;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
-  font-size: .72em;
+  font-size: .6em;
   font-variant: small-caps;
   left: -2px;
   line-height: 80%;
@@ -409,10 +409,11 @@ main {
   font-size: inherit;
   font-size: 100%;
   font-weight: inherit;
+  line-height: 140%;
   margin: 0;
   padding: 0;
 }
-/* line 129, sass/_client_slide.scss */
+/* line 130, sass/_client_slide.scss */
 .client_slide .content > .text h1 {
   color: #83DBE7;
   display: inline-block;
@@ -422,25 +423,25 @@ main {
   margin: -20px 0 25px;
   text-transform: uppercase;
 }
-/* line 139, sass/_client_slide.scss */
+/* line 140, sass/_client_slide.scss */
 .client_slide .content > .text h2 {
   color: #FFF;
   display: inline-block;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
-  font-size: .18em;
-  margin: 0 0 15px;
+  font-size: .16em;
+  margin: 0 0 .5em;
   text-transform: uppercase;
 }
-/* line 148, sass/_client_slide.scss */
+/* line 149, sass/_client_slide.scss */
 .client_slide .content > .text p {
   color: #FFF;
   display: inline-block;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: .15em;
+  font-size: .13em;
   line-height: 160%;
   margin: 0 0 30px;
 }
-/* line 156, sass/_client_slide.scss */
+/* line 157, sass/_client_slide.scss */
 .client_slide .content > .text p.slides_count {
   bottom: 15px;
   margin: 0;
@@ -448,17 +449,17 @@ main {
   position: absolute;
   right: 15px;
 }
-/* line 167, sass/_client_slide.scss */
+/* line 168, sass/_client_slide.scss */
 .client_slide .content > .text.products p {
   text-transform: capitalize;
 }
 
-/* line 175, sass/_client_slide.scss */
+/* line 176, sass/_client_slide.scss */
 .slick-slide.slick-active.slick-current .client_slide .content {
   opacity: 1;
 }
 
-/* line 179, sass/_client_slide.scss */
+/* line 180, sass/_client_slide.scss */
 .section_slider.active .client_slide .hero {
   opacity: 1;
 }
