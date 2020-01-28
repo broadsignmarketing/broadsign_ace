@@ -1,14 +1,12 @@
 import React, { useState, useEffect} from "react";
-import Helmet from "react-helmet"
-import Slider from "react-slick";
 import { graphql } from "gatsby";
 import { Swipeable } from "react-swipeable";
 import classnames from "classnames";
 
+import Helmet from "react-helmet"
 import Img from "gatsby-image/withIEPolyfill";
 import SectionSlider from "../components/SectionSlider";
-
-import broadsign_logo from "../images/icons/safari-pinned-tab.svg"
+import Slider from "react-slick";
 
 import "../styles/styles.css";
 
@@ -54,7 +52,6 @@ function IndexPage(props) {
 		className: "main_slider"
 	};
 
-
 	useEffect(() => {
 		const buildSlide = (s) => {
 			const slideReturn = {
@@ -75,8 +72,6 @@ function IndexPage(props) {
 			if (section === "programmatic") {
 				r = data.slides.edges.map((s) => {
 					const pattern = new RegExp("("+subSection.replace(/_/g, ".")+")", "i");
-					console.log(pattern);
-					console.log(s);
 					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
 						return buildSlide(s.node);
 					}
@@ -99,16 +94,6 @@ function IndexPage(props) {
 		}
 	}, [section, subSection, data.slides.edges]);
 
-	/*
-	useEffect(() => {
-		/* Leave no trace of the fugly #offline below !!! *
-		setTimeout(() => {
-			const rem = document.querySelector("#offline");
-			if (rem) { rem.parentNode.removeChild(rem); }
-		}, 2000);
-	}, []);
-	*/
-
 	return (
 		<div id="global">
 			<Helmet defer={false}>
@@ -116,10 +101,7 @@ function IndexPage(props) {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 			</Helmet>
-			<div id="splash">
-				<img src={broadsign_logo} alt="" />
-				<p className="title">Broadsign Ace</p>
-			</div>
+			<div id="splash"></div>
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>

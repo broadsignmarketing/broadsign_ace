@@ -95,38 +95,6 @@ main {
 	}
 }
 
-@keyframes textOut {
-	0% {
-		max-height: 44px;
-		top: 75%;
-	}
-
-	99% {
-		max-height: 0px;
-		top: calc(75% + 22px);
-	}
-
-	100% {
-		display: none;
-		max-height: 0px;
-		top: calc(75% + 22px);
-	}
-}
-
-@keyframes pulse {
-	0% {
-		filter: drop-shadow(0 0 10px #FFF);
-	}
-
-	50% {
-		filter: drop-shadow(0 0 40px #001464);
-	}
-
-	100% {
-		filter: drop-shadow(0 0 10px #FFF);
-	}
-}
-
 #splash {
 	@include cover;
 	@include flexCenter;
@@ -139,26 +107,6 @@ main {
 	position: relative;
 	user-select: none;
 	z-index: 100;
-
-	.title {
-		align-items: center;
-		animation: textOut 1s ease-out 2s forwards;
-		color: #FFF;
-		display: inline-flex;
-		font-family: "Roboto Regular";
-		font-size: 32px;
-		height: 44px;
-		margin: 0;
-		overflow: hidden;
-		position: absolute;
-		top: 75%;
-	}
-
-	img {
-		animation: pulse 2s ease-in-out 0s infinite;
-		height: 50vmin;
-		width: 50vmin;
-	}
 }
 
 #offline {
@@ -170,7 +118,7 @@ main {
 	top: 25%;
 	user-select: none;
 	width: 50%;
-	z-index: 1;
+	z-index: 1000;
 
 	img {
 		height: 100%;
