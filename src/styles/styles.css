@@ -51,7 +51,7 @@ main {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-  z-index: 1;
+  z-index: 10;
 }
 /* line 77, sass/_app.scss */
 #app > .inner {
@@ -127,7 +127,7 @@ main {
   pointer-events: none;
   position: relative;
   user-select: none;
-  z-index: 10;
+  z-index: 100;
 }
 /* line 143, sass/_app.scss */
 #splash .title {
@@ -152,16 +152,29 @@ main {
 
 /* line 164, sass/_app.scss */
 #offline {
-  max-height: 0;
-  max-width: 0;
-  opacity: 0;
+  height: 50%;
+  left: 25%;
   overflow: hidden;
   pointer-events: none;
+  position: fixed;
+  top: 25%;
   user-select: none;
+  width: 50%;
+  z-index: 1;
+}
+/* line 175, sass/_app.scss */
+#offline img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.05;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 @media only screen and (orientation: portrait) {
-  /* line 174, sass/_app.scss */
+  /* line 187, sass/_app.scss */
   #app {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);
