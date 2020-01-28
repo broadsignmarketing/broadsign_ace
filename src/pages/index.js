@@ -8,6 +8,8 @@ import classnames from "classnames";
 import Img from "gatsby-image/withIEPolyfill";
 import SectionSlider from "../components/SectionSlider";
 
+import broadsign_logo from "../images/icons/safari-pinned-tab.svg"
+
 import "../styles/styles.css";
 
 function IndexPage(props) {
@@ -102,9 +104,6 @@ function IndexPage(props) {
 		setTimeout(() => {
 			const rem = document.querySelector("#offline");
 			if (rem) { rem.parentNode.removeChild(rem); }
-
-			const mainSlider = document.querySelector(".main_slider");
-			mainSlider.focus();
 		}, 2000);
 	}, []);
 
@@ -115,6 +114,9 @@ function IndexPage(props) {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 			</Helmet>
+			<div id="splash">
+				<img src={broadsign_logo} />
+			</div>
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>

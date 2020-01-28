@@ -51,8 +51,9 @@ main {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
+  z-index: 1;
 }
-/* line 76, sass/_app.scss */
+/* line 77, sass/_app.scss */
 #app > .inner {
   flex: 0 0 100%;
   height: 100%;
@@ -65,8 +66,60 @@ main {
   background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 10px #FFF);
+  }
+  50% {
+    filter: drop-shadow(0 0 40px #001464);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px #FFF);
+  }
+}
+/* line 112, sass/_app.scss */
+#splash {
+  flex: 0 0 100%;
+  height: 100%;
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  animation: fadeOut 2s ease-in 2s forwards;
+  background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+/* line 122, sass/_app.scss */
+#splash img {
+  animation: pulse 2s ease-in-out 0s infinite;
+  height: 50vmin;
+  width: 50vmin;
+}
+
 @media only screen and (orientation: portrait) {
-  /* line 83, sass/_app.scss */
+  /* line 130, sass/_app.scss */
   #app {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);
