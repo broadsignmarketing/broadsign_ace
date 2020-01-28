@@ -9,7 +9,7 @@
 		display: flex;
 		flex: 0 0 60%;
 		height: 100%;
-		max-width: 60%;
+		max-width: 100vh;
 		opacity: 0;
 		overflow: hidden;
 		position: relative;
@@ -81,7 +81,7 @@
 		justify-content: center;
 		max-width: 40%;
 		opacity: 0;
-		padding: 55px 3%;
+		padding: 6vh 3%;
 		position: relative;
 		transition: opacity 0.4s ease-out 0.4s;
 		user-select: none;
@@ -186,4 +186,32 @@
 
 .section_slider.active .client_slide .hero {
 	opacity: 1;
+}
+
+@media screen and (max-height: 740px) {
+	.client_slide {
+
+		.hero,
+		.content {
+			flex: 0 0 50%;
+			max-width: 50%;
+			width: 50%;
+		}
+
+		.gallery .thumb {
+			max-width: 8vw;
+			width: 80px;
+		}
+
+		.content {
+			h1 {
+				font-size: 0.5em;
+				margin-bottom: 4vh;
+			}
+
+			&>.text p {
+				margin-bottom: 3vh;
+			}
+		}
+	}
 }
