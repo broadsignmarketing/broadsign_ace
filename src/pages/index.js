@@ -99,13 +99,15 @@ function IndexPage(props) {
 		}
 	}, [section, subSection, data.slides.edges]);
 
+	/*
 	useEffect(() => {
-		/* Leave no trace of the fugly #offline below !!! */
+		/* Leave no trace of the fugly #offline below !!! *
 		setTimeout(() => {
 			const rem = document.querySelector("#offline");
 			if (rem) { rem.parentNode.removeChild(rem); }
 		}, 2000);
 	}, []);
+	*/
 
 	return (
 		<div id="global">
@@ -115,7 +117,8 @@ function IndexPage(props) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 			</Helmet>
 			<div id="splash">
-				<img src={broadsign_logo} />
+				<img src={broadsign_logo} alt="" />
+				<p className="title">Broadsign Ace</p>
 			</div>
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
@@ -174,11 +177,11 @@ function IndexPage(props) {
 					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
 				</Swipeable>
 				{/* To force a first load of all the images needed in the app */}
-				<div id="offline">
-					{data.slides.edges.map((s) => {
-						return s.node.frontmatter.gallery.map((i, key) => <img src={i} alt="" key={"cache-"+key} />)
-					})}
-				</div>
+			</div>
+			<div id="offline">
+				{data.slides.edges.map((s) => {
+					return s.node.frontmatter.gallery.map((i, key) => <img src={i} alt="" key={"cache-"+key} />)
+				})}
 			</div>
 		</div>
 	)
