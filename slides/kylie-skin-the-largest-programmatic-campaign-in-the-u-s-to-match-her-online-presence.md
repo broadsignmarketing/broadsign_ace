@@ -1,8 +1,6 @@
 ---
 layout: blog
-title: >-
-  Kylie Skin | The largest programmatic campaign in the U.S. to match her online
-  presence
+title: Kylie Skin
 date: 2020-01-28T13:50:15.550Z
 gallery:
   - /images/uploads/11.png
@@ -15,6 +13,8 @@ categories:
     - outdoor
     - shopping_malls
 ---
+> The largest programmatic campaign in the U.S. to match her online presence
+
 ## CHALLENGE
 
 The Kylie Skin team wanted to reach multiple cities with DOOH ads simultaneously, hoping to achieve maximum impact to promote the launch of Kylie Jenner’s new skincare line.
