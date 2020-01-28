@@ -72,7 +72,9 @@ function IndexPage(props) {
 
 			if (section === "programmatic") {
 				r = data.slides.edges.map((s) => {
-					const pattern = new RegExp("("+subSection.replace(/_/, ".")+")", "i");
+					const pattern = new RegExp("("+subSection.replace(/_/g, ".")+")", "i");
+					console.log(pattern);
+					console.log(s);
 					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
 						return buildSlide(s.node);
 					}
