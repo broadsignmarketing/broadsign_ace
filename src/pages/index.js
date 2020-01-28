@@ -16,6 +16,7 @@ function IndexPage(props) {
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
 	const [slides, setSlides] = useState([]);
+	const [images, setImages] = useState([]);
 
 	const updateSections = (main, sub) => {
 		setSection(main);
@@ -94,12 +95,29 @@ function IndexPage(props) {
 		}
 	}, [section, subSection, data.slides.edges]);
 
+	useEffect(() => {
+		let r = [];
+		data.slides.edges.forEach((s) => {
+			if (s.node.frontmatter.gallery) {
+				s.node.frontmatter.gallery.forEach((img) => {
+					r.push(img);
+				});
+			}
+			return false;
+		});
+
+		setImages(r);
+	}, [data.slides.edges])
+
 	return (
 		<div id="global">
 			<Helmet defer={false}>
 				<title>Broadsign Ace</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+				{images.map((img, k) => (
+					<link rel="preload" href={img} key={k}></link>
+				))}
 			</Helmet>
 			<div id="splash"></div>
 			<div id="app">
