@@ -166,7 +166,7 @@ function IndexPage(props) {
 						</div>
 					</Slider>
 				</Swipeable>
-				<Swipeable onSwipedDown={ () => closeSections() } onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
+				<Swipeable onSwipedDown={ (e) => { console.log(e); e.preventDefault(); closeSections() }} onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
 				</Swipeable>
 				{/* To force a first load of all the images needed in the app */}

@@ -25,9 +25,10 @@ body {
   display: block;
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
 }
 
-/* line 53, sass/_app.scss */
+/* line 54, sass/_app.scss */
 #global,
 main {
   background-color: #000;
@@ -37,7 +38,7 @@ main {
   width: 100vw;
 }
 
-/* line 62, sass/_app.scss */
+/* line 63, sass/_app.scss */
 #app {
   background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
   display: flex;
@@ -51,7 +52,7 @@ main {
   transform: translate(-50%, -50%);
   width: 100vw;
 }
-/* line 75, sass/_app.scss */
+/* line 76, sass/_app.scss */
 #app > .inner {
   flex: 0 0 100%;
   height: 100%;
@@ -65,7 +66,7 @@ main {
 }
 
 @media only screen and (orientation: portrait) {
-  /* line 82, sass/_app.scss */
+  /* line 83, sass/_app.scss */
   #app {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);
