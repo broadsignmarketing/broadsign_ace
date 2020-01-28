@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Nokia |  Using programmatic to promote 5G across Europe
+title: 'Nokia '
 date: 2020-01-28T14:36:49.238Z
 gallery:
   - /images/uploads/hero_nokia1.png
@@ -12,6 +12,8 @@ categories:
   verticals:
     - internal_comms
 ---
+> Using programmatic to promote 5G across Europe
+
 ## CHALLENGE
 
 Showcase Nokia’s 5G network to workplace professionals across Europe
