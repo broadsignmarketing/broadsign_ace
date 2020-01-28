@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Broadsign | Climate Change March
+title: 'Broadsign '
 date: 2020-01-28T15:34:07.065Z
 gallery:
   - /images/uploads/GitHub (2).png
@@ -13,6 +13,8 @@ categories:
   verticals:
     - outdoor
 ---
+> Climate Change March
+
 ## CHALLENGE
 
 Showcase the speed and flexibility of the Campsite platform by launching a DOOH campaign delivered to screens along the route of climate marchers.
