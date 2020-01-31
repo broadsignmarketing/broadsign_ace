@@ -12,6 +12,7 @@ import "../styles/styles.css";
 
 function IndexPage(props) {
 	const {data} = props;
+	const [loaded, setLoaded] = useState(false);
 	const [section, setSection] = useState("products");
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
@@ -143,8 +144,14 @@ function IndexPage(props) {
 	}, [props.location.href, data.slides.edges, data]);
 	*/
 
+	useEffect(() => {
+		setTimeout(() => {
+			setLoaded(true);
+		}, 1000);
+	}, []);
+
 	return (
-		<div id="global">
+		<div id="global" className={loaded ? "loaded" : ""}>
 			<Helmet defer={false}>
 				<title>Broadsign Ace</title>
 				<meta charSet="utf-8" />
@@ -153,7 +160,9 @@ function IndexPage(props) {
 					<link rel="preload" href={props.location.href+img} key={k}></link>
 				)) */}
 			</Helmet>
-			<div id="splash"></div>
+			<div id="splash">
+				<Img className="logo" fluid={data.broadsignLogo.edges[0].node.childImageSharp.fluid} alt="" objectFit="contain" loading="eager" />
+			</div>
 			<div id="app">
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>
@@ -223,8 +232,22 @@ function IndexPage(props) {
 
 export default IndexPage;
 
-export const queryTiles = graphql `
-	query Tiles {
+export const queryAllImages = graphql `
+	query AllImages {
+		broadsignLogo: allFile(filter: {name: {eq: "broadsign_icon"}}) {
+			edges {
+				node {
+					childImageSharp {
+						fluid {
+							aspectRatio
+							src
+							srcSet
+							sizes
+						}
+					}
+				}
+			}
+		}
 		productsTiles: allFile(filter: { sourceInstanceName: {eq: "images"}, relativePath: {regex: "/^tile_products_/"}}, sort: {fields: relativePath}) {
 			edges {
 				node {

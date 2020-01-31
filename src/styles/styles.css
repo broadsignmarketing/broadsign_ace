@@ -50,10 +50,11 @@ main {
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: opacity 1s;
   width: 100vw;
   z-index: 10;
 }
-/* line 77, sass/_app.scss */
+/* line 78, sass/_app.scss */
 #app > .inner {
   flex: 0 0 100%;
   height: 100%;
@@ -66,19 +67,7 @@ main {
   background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-    opacity: 0;
-  }
-}
-/* line 98, sass/_app.scss */
+/* line 84, sass/_app.scss */
 #splash {
   flex: 0 0 100%;
   height: 100%;
@@ -93,21 +82,26 @@ main {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  /* animation: fadeOut 2s ease-in 4s forwards; */
   background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
   display: flex;
   flex-flow: column nowrap;
-  opacity: 0;
   pointer-events: none;
   position: relative;
+  transition: opacity 1s;
   user-select: none;
   z-index: 100;
 }
+/* line 96, sass/_app.scss */
+#splash .logo {
+  height: 50vmin;
+  width: 50vmin;
+}
 
-/* line 112, sass/_app.scss */
+/* line 102, sass/_app.scss */
 #offline {
   height: 50%;
   left: 25%;
+  opacity: 0.01;
   overflow: hidden;
   pointer-events: none;
   position: fixed;
@@ -116,7 +110,7 @@ main {
   width: 50%;
   z-index: 1;
 }
-/* line 123, sass/_app.scss */
+/* line 114, sass/_app.scss */
 #offline .gatsby-image-wrapper {
   height: 100%;
   left: 0;
@@ -127,8 +121,26 @@ main {
   width: 100%;
 }
 
+/* line 126, sass/_app.scss */
+#global:not(.loaded) #splash {
+  opacity: 1;
+}
+/* line 130, sass/_app.scss */
+#global:not(.loaded) #app {
+  opacity: 0.1;
+}
+
+/* line 136, sass/_app.scss */
+#global.loaded #splash {
+  opacity: 0;
+}
+/* line 140, sass/_app.scss */
+#global.loaded #app {
+  opacity: 1;
+}
+
 @media only screen and (orientation: portrait) {
-  /* line 135, sass/_app.scss */
+  /* line 146, sass/_app.scss */
   #app {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);
@@ -167,7 +179,7 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
   color: #83DBE7;
-  color: red;
+  color: green;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
   font-size: 60px;
   font-variant: small-caps;
