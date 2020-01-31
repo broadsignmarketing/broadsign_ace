@@ -16,7 +16,7 @@ function IndexPage(props) {
 	const [subSection, setSubSection] = useState("none");
 	const [clientsSliderActive, setClientsSliderActive] = useState("");
 	const [slides, setSlides] = useState([]);
-	const [images, setImages] = useState([]);
+	// const [images, setImages] = useState([]);
 
 	const updateSections = (main, sub) => {
 		setSection(main);
@@ -54,14 +54,14 @@ function IndexPage(props) {
 	};
 
 	useEffect(() => {
-		const buildSlide = (s) => {
+		const buildSlide = (s, gatsbyImagesList) => {
 			const slideReturn = {
 				"id" : s.id,
 				"title" : s.frontmatter.title,
 				"content" : s.html,
 				"products" : s.frontmatter.categories.products,
 				"verticals" : s.frontmatter.categories.verticals,
-				"gallery" : s.frontmatter.gallery
+				"gallery" : gatsbyImagesList
 			}
 
 			return slideReturn;
@@ -74,15 +74,29 @@ function IndexPage(props) {
 				r = data.slides.edges.map((s) => {
 					const pattern = new RegExp("("+subSection.replace(/_/g, ".")+")", "i");
 					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
-						return buildSlide(s.node);
+						return buildSlide(s.node, []);
 					}
 					return false;
 				});
 			} else {
 				r = data.slides.edges.map((s) => {
+					let gatsbyImagesList = [];
+					s.node.frontmatter.gallery.forEach((galleryImgURL) => {
+						const imageName = galleryImgURL.replace("/images/uploads/", "");
+
+						data.slidesImages.edges.forEach((g) => {
+							const img = g.node;
+							const filenamePattern = new RegExp(img.name+"\.(jpg|png)");
+							if (filenamePattern.test(imageName)) {
+								gatsbyImagesList.push(img);
+							}
+						});
+					});
+
 					if (s.node.frontmatter.categories[section] && s.node.frontmatter.categories[section].includes(subSection)) {
-						return buildSlide(s.node);
+						return buildSlide(s.node, gatsbyImagesList);
 					}
+
 					return false;
 				});
 			}
@@ -93,21 +107,28 @@ function IndexPage(props) {
 		if (subSection !== "none") {
 			setSlides(filterSlides(section, subSection));
 		}
-	}, [section, subSection, data.slides.edges]);
+	}, [section, subSection, data.slides.edges, data.slidesImages.edges]);
 
+	/*
 	useEffect(() => {
 		let r = [];
 		data.slides.edges.forEach((s) => {
 			if (s.node.frontmatter.gallery) {
 				s.node.frontmatter.gallery.forEach((img) => {
-					r.push(img);
+					console.log(img);
+					const gImg = data.slidesImages.edges.map((g) => {
+						const img = g.node;
+						console.log(img);
+					});
+					// r.push((props.location.href+img).replace(/\/\//g, "/"));
 				});
 			}
 			return false;
 		});
 
 		setImages(r);
-	}, [data.slides.edges])
+	}, [props.location.href, data.slides.edges, data]);
+	*/
 
 	return (
 		<div id="global">
@@ -115,9 +136,9 @@ function IndexPage(props) {
 				<title>Broadsign Ace</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-				{images.map((img, k) => (
-					<link rel="preload" href={img} key={k}></link>
-				))}
+				{/* images.map((img, k) => (
+					<link rel="preload" href={props.location.href+img} key={k}></link>
+				)) */}
 			</Helmet>
 			<div id="splash"></div>
 			<div id="app">
@@ -176,13 +197,13 @@ function IndexPage(props) {
 				<Swipeable onSwipedDown={ () => closeSections() } onSwipedUp={ () => setClientsSliderActive("active") } className={classnames("section_slider", clientsSliderActive, section, ( subSection !== "none" ? subSection : "" ))}>
 					{slides && slides.length > 0 ? <SectionSlider slides={slides} /> : null}
 				</Swipeable>
-				{/* To force a first load of all the images needed in the app */}
 			</div>
-			<div id="offline">
+			{/* To force a first load of all the images needed in the app */}
+			{/* <div id="offline">
 				{data.slides.edges.map((s) => {
 					return s.node.frontmatter.gallery.map((i, key) => <img src={i} alt="" key={"cache-"+key} />)
 				})}
-			</div>
+			</div> */}
 		</div>
 	)
 }
@@ -252,6 +273,23 @@ export const queryTiles = graphql `
 							programmatic
 							products
 							verticals
+						}
+					}
+				}
+			}
+		}
+
+		slidesImages: allFile(filter: { sourceInstanceName: {eq: "slidesImages"}}, sort: {fields: relativePath}) {
+			edges {
+				node {
+					id
+					name
+					childImageSharp {
+						fluid {
+							aspectRatio
+							src
+							srcSet
+							sizes
 						}
 					}
 				}

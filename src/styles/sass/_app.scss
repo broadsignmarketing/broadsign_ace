@@ -98,11 +98,11 @@ main {
 #splash {
 	@include cover;
 	@include flexCenter;
-	animation: fadeOut 2s ease-in 4s forwards;
+	/* animation: fadeOut 2s ease-in 4s forwards; */
 	background: linear-gradient(to bottom, #250000 0%, #03001C 50%, #011E26 100%);
 	display: flex;
 	flex-flow: column nowrap;
-	opacity: 1;
+	opacity: 0;
 	pointer-events: none;
 	position: relative;
 	user-select: none;
