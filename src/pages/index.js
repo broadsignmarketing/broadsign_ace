@@ -74,7 +74,20 @@ function IndexPage(props) {
 				r = data.slides.edges.map((s) => {
 					const pattern = new RegExp("("+subSection.replace(/_/g, ".")+")", "i");
 					if (s.node.frontmatter.categories.programmatic && pattern.test(s.node.frontmatter.title)) {
-						return buildSlide(s.node, []);
+						let gatsbyImagesList = [];
+						s.node.frontmatter.gallery.forEach((galleryImgURL) => {
+							const imageName = galleryImgURL.replace("/images/uploads/", "");
+
+							data.slidesImages.edges.forEach((g) => {
+								const img = g.node;
+								const filenamePattern = new RegExp(img.name+"\.(jpg|png)");
+								if (filenamePattern.test(imageName)) {
+									gatsbyImagesList.push(img);
+								}
+							});
+						});
+
+						return buildSlide(s.node, gatsbyImagesList);
 					}
 					return false;
 				});

@@ -167,6 +167,7 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
   color: #83DBE7;
+  color: red;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
   font-size: 60px;
   font-variant: small-caps;
@@ -178,12 +179,12 @@ main {
   user-select: none;
   width: 100%;
 }
-/* line 43, sass/_main.scss */
+/* line 44, sass/_main.scss */
 .main_slider > .slick-list > .slick-track {
   align-items: stretch;
   display: flex;
 }
-/* line 47, sass/_main.scss */
+/* line 48, sass/_main.scss */
 .main_slider > .slick-list > .slick-track > .slick-slide {
   align-items: center;
   display: inline-flex;
@@ -192,7 +193,7 @@ main {
   max-height: 100%;
   position: relative;
 }
-/* line 55, sass/_main.scss */
+/* line 56, sass/_main.scss */
 .main_slider > .slick-list > .slick-track > .slick-slide > div {
   flex: 0 0 100%;
   height: 100%;
@@ -204,7 +205,7 @@ main {
   width: 100%;
   display: flex;
 }
-/* line 63, sass/_main.scss */
+/* line 64, sass/_main.scss */
 .main_slider .slide {
   flex: 0 0 100%;
   height: 100%;
@@ -215,7 +216,7 @@ main {
   top: 0;
   width: 100%;
 }
-/* line 66, sass/_main.scss */
+/* line 67, sass/_main.scss */
 .main_slider .slide .tile_set {
   align-content: center;
   align-items: center;
@@ -227,7 +228,7 @@ main {
   max-width: 80%;
   width: 80%;
 }
-/* line 78, sass/_main.scss */
+/* line 79, sass/_main.scss */
 .main_slider .slide .tile {
   background: transparent none;
   border: 0 none;
@@ -237,27 +238,27 @@ main {
   padding: 0;
   width: calc(33.333333% - 1rem);
 }
-/* line 87, sass/_main.scss */
+/* line 88, sass/_main.scss */
 .main_slider .slide .tile .gatsby-image-wrapper {
   height: 100% !important;
   pointer-events: none;
   width: 100% !important;
 }
-/* line 93, sass/_main.scss */
+/* line 94, sass/_main.scss */
 .main_slider .slide .tile.active {
   animation: tilePress 0.6s ease-out 0s forwards;
 }
-/* line 99, sass/_main.scss */
+/* line 100, sass/_main.scss */
 .main_slider .slide.products .tile {
   flex: 0 0 calc(20% - 1rem);
   width: calc(20% - 1rem);
 }
-/* line 106, sass/_main.scss */
+/* line 107, sass/_main.scss */
 .main_slider .slide.programmatic .tile {
   flex: 0 0 calc(22% - 1rem);
   width: calc(22% - 1rem);
 }
-/* line 113, sass/_main.scss */
+/* line 114, sass/_main.scss */
 .main_slider .slide.verticals .tile_set {
   margin: 0 16%;
   max-width: 68% !important;
