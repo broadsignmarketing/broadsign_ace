@@ -117,12 +117,12 @@ main {
   z-index: 1;
 }
 /* line 123, sass/_app.scss */
-#offline img {
+#offline .gatsby-image-wrapper {
   height: 100%;
   left: 0;
   object-fit: cover;
   opacity: 0.05;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   width: 100%;
 }
