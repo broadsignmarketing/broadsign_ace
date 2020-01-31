@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Img from "gatsby-image/withIEPolyfill";
 import classnames from "classnames";
 
 export default function ClientSlide(props) {
@@ -48,14 +47,14 @@ export default function ClientSlide(props) {
 		<div className="client_slide" id={"slide_"+id}>
 			<div className="hero">
 				{gallery.map((img, index) => {
-					return (<Img fluid={img.childImageSharp.fluid} className={classnames("bg", (index === currentImg ? "active" : ""))} key={"bg_"+index} alt="" objectFit="cover" style={{ position: "absolute" }} />)
+					return (<img src={img} className={classnames("bg", (index === currentImg ? "active" : ""))} key={"bg_"+index} alt="" />)
 				})}
 				{ gallery.length > 1 && (
 					<div className="gallery">
 						{gallery.map((img, index) => {
 							return (
 								<button key={"tb"+index} onClick={() => { setCurrentImg(index) }} className={classnames("thumb", (index === currentImg ? "active" : ""))}>
-									<Img fluid={img.childImageSharp.fluid} objectFit="cover" alt="" />
+									<img src={img} alt="" />
 								</button>
 							)
 						})}
