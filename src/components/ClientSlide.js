@@ -48,7 +48,6 @@ export default function ClientSlide(props) {
 		<div className="client_slide" id={"slide_"+id}>
 			<div className="hero">
 				{gallery.map((img, index) => {
-					console.log(img);
 					return (<Img fluid={img.childImageSharp.fluid} className={classnames("bg", (index === currentImg ? "active" : ""))} key={"bg_"+index} alt="" objectFit="cover" style={{ position: "absolute" }} />)
 				})}
 				{ gallery.length > 1 && (

@@ -179,7 +179,7 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
   color: #83DBE7;
-  color: green;
+  color: yellow;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
   font-size: 60px;
   font-variant: small-caps;
@@ -312,7 +312,7 @@ main {
   width: 100%;
 }
 /* line 34, sass/_section_slider.scss */
-.section_slider > .slick-slider {
+.section_slider > .middle > .slick-slider {
   flex: 0 0 100%;
   height: 100%;
   left: 0;
@@ -324,12 +324,12 @@ main {
   display: flex;
 }
 /* line 39, sass/_section_slider.scss */
-.section_slider > .slick-slider > .slick-list > .slick-track {
+.section_slider > .middle > .slick-slider > .slick-list > .slick-track {
   align-items: stretch;
   display: flex;
 }
 /* line 43, sass/_section_slider.scss */
-.section_slider > .slick-slider > .slick-list > .slick-track > .slick-slide {
+.section_slider > .middle > .slick-slider > .slick-list > .slick-track > .slick-slide {
   align-items: center;
   display: inline-flex;
   height: 100%;
@@ -338,7 +338,7 @@ main {
   position: relative;
 }
 /* line 51, sass/_section_slider.scss */
-.section_slider > .slick-slider > .slick-list > .slick-track > .slick-slide > div {
+.section_slider > .middle > .slick-slider > .slick-list > .slick-track > .slick-slide > div {
   flex: 0 0 100%;
   height: 100%;
   left: 0;
