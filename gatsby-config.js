@@ -57,6 +57,17 @@ module.exports = {
 			globPatterns: [
 				'**/*.{js,jpg,png,html,css}',
 			],
+			workboxConfig: {
+				importWorkboxFrom: `cdn`,
+			},
+			dontCacheBustURLsMatching: /(\.png$|\.jpg$|static\/|images\/)/,
+			runtimeCaching: [
+				{
+				  // Use cacheFirst since these don't need to be revalidated ; same RegExp and same reason as above
+				  urlPattern: /(\.png$|\.jpg$|static\/|images\/)/,
+				  handler: `cacheFirst`,
+				},
+			},
 		}
 	},
 	{

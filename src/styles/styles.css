@@ -172,7 +172,7 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
   color: #83DBE7;
-  color: red;
+  color: purple;
   font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
   font-size: 60px;
   font-variant: small-caps;
@@ -534,34 +534,39 @@ main {
 }
 
 /* line 186, sass/_client_slide.scss */
+.section_slider.programmatic .client_slide .content > .text.products {
+  display: none;
+}
+
+/* line 190, sass/_client_slide.scss */
 .slick-slide.slick-active.slick-current .client_slide .content {
   opacity: 1;
 }
 
-/* line 190, sass/_client_slide.scss */
+/* line 194, sass/_client_slide.scss */
 .section_slider.active .client_slide .hero {
   opacity: 1;
 }
 
 @media screen and (max-height: 740px) {
-  /* line 197, sass/_client_slide.scss */
+  /* line 201, sass/_client_slide.scss */
   .client_slide .hero,
   .client_slide .content {
     flex: 0 0 50%;
     max-width: 50%;
     width: 50%;
   }
-  /* line 204, sass/_client_slide.scss */
+  /* line 208, sass/_client_slide.scss */
   .client_slide .gallery .thumb {
     max-width: 8vw;
     width: 80px;
   }
-  /* line 210, sass/_client_slide.scss */
+  /* line 214, sass/_client_slide.scss */
   .client_slide .content h1 {
     font-size: 0.5em;
     margin-bottom: 4vh;
   }
-  /* line 215, sass/_client_slide.scss */
+  /* line 219, sass/_client_slide.scss */
   .client_slide .content > .text p {
     margin-bottom: 3vh;
   }

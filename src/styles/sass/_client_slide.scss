@@ -183,6 +183,10 @@
 	}
 }
 
+.section_slider.programmatic .client_slide .content>.text.products {
+	display: none;
+}
+
 .slick-slide.slick-active.slick-current .client_slide .content {
 	opacity: 1;
 }
