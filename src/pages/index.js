@@ -185,11 +185,11 @@ function IndexPage(props) {
 				</Swipeable>
 				{/* To force a first load of all the images needed in the app */}
 			</div>
-			<div id="offline">
+			{/* <div id="offline">
 				{data.slides.edges.map((s) => {
 					return s.node.frontmatter.gallery.map((i, key) => <img src={i} alt="" key={"cache-"+key} />)
 				})}
-			</div>
+			</div> */}
 		</div>
 	)
 }

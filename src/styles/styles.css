@@ -391,13 +391,14 @@ main {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+  opacity: 1;
   pointer-events: all;
   position: absolute;
   right: 10px;
   transition: opacity 0s linear 0s;
   z-index: 1000;
 }
-/* line 46, sass/_client_slide.scss */
+/* line 47, sass/_client_slide.scss */
 .client_slide .gallery .thumb {
   background-color: #000;
   background-size: cover;
@@ -409,23 +410,25 @@ main {
   margin-left: 10px;
   max-height: 7vmax;
   max-width: 9vmax;
+  opacity: 1;
   overflow: hidden;
   padding: 0;
   pointer-events: all;
   width: 90px;
 }
-/* line 62, sass/_client_slide.scss */
+/* line 64, sass/_client_slide.scss */
 .client_slide .gallery .thumb.active {
   border-color: #7BC;
 }
-/* line 66, sass/_client_slide.scss */
+/* line 68, sass/_client_slide.scss */
 .client_slide .gallery .thumb img {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  opacity: 1;
   width: 100%;
 }
-/* line 75, sass/_client_slide.scss */
+/* line 78, sass/_client_slide.scss */
 .client_slide .content {
   display: flex;
   flex: 0 0 40%;
@@ -442,7 +445,7 @@ main {
   width: 40%;
   z-index: 10;
 }
-/* line 91, sass/_client_slide.scss */
+/* line 94, sass/_client_slide.scss */
 .client_slide .content h1 {
   color: #83DBE7;
   display: inline-block;
@@ -458,7 +461,7 @@ main {
   transform: none;
   width: fit-content;
 }
-/* line 107, sass/_client_slide.scss */
+/* line 110, sass/_client_slide.scss */
 .client_slide .content > .text {
   color: inherit;
   display: flex;
@@ -467,7 +470,7 @@ main {
   font-size: inherit;
   font-weight: inherit;
 }
-/* line 115, sass/_client_slide.scss */
+/* line 118, sass/_client_slide.scss */
 .client_slide .content > .text blockquote {
   color: #83DBE7;
   display: inline-block;
@@ -476,7 +479,7 @@ main {
   line-height: 120%;
   margin: -20px 0 25px;
 }
-/* line 123, sass/_client_slide.scss */
+/* line 126, sass/_client_slide.scss */
 .client_slide .content > .text blockquote > p {
   color: inherit;
   display: flex;
@@ -489,7 +492,7 @@ main {
   margin: 0;
   padding: 0;
 }
-/* line 137, sass/_client_slide.scss */
+/* line 140, sass/_client_slide.scss */
 .client_slide .content > .text h1 {
   color: #83DBE7;
   display: inline-block;
@@ -499,7 +502,7 @@ main {
   margin: -20px 0 25px;
   text-transform: uppercase;
 }
-/* line 147, sass/_client_slide.scss */
+/* line 150, sass/_client_slide.scss */
 .client_slide .content > .text h2 {
   color: #FFF;
   display: inline-block;
@@ -508,7 +511,7 @@ main {
   margin: 0 0 .5em;
   text-transform: uppercase;
 }
-/* line 156, sass/_client_slide.scss */
+/* line 159, sass/_client_slide.scss */
 .client_slide .content > .text p {
   color: #FFF;
   display: inline-block;
@@ -517,7 +520,7 @@ main {
   line-height: 150%;
   margin: 0 0 2.4em;
 }
-/* line 164, sass/_client_slide.scss */
+/* line 167, sass/_client_slide.scss */
 .client_slide .content > .text p.slides_count {
   bottom: 15px;
   margin: 0;
@@ -525,40 +528,40 @@ main {
   position: absolute;
   right: 15px;
 }
-/* line 175, sass/_client_slide.scss */
+/* line 178, sass/_client_slide.scss */
 .client_slide .content > .text.products p {
   text-transform: capitalize;
 }
 
-/* line 183, sass/_client_slide.scss */
+/* line 186, sass/_client_slide.scss */
 .slick-slide.slick-active.slick-current .client_slide .content {
   opacity: 1;
 }
 
-/* line 187, sass/_client_slide.scss */
+/* line 190, sass/_client_slide.scss */
 .section_slider.active .client_slide .hero {
   opacity: 1;
 }
 
 @media screen and (max-height: 740px) {
-  /* line 194, sass/_client_slide.scss */
+  /* line 197, sass/_client_slide.scss */
   .client_slide .hero,
   .client_slide .content {
     flex: 0 0 50%;
     max-width: 50%;
     width: 50%;
   }
-  /* line 201, sass/_client_slide.scss */
+  /* line 204, sass/_client_slide.scss */
   .client_slide .gallery .thumb {
     max-width: 8vw;
     width: 80px;
   }
-  /* line 207, sass/_client_slide.scss */
+  /* line 210, sass/_client_slide.scss */
   .client_slide .content h1 {
     font-size: 0.5em;
     margin-bottom: 4vh;
   }
-  /* line 212, sass/_client_slide.scss */
+  /* line 215, sass/_client_slide.scss */
   .client_slide .content > .text p {
     margin-bottom: 3vh;
   }
