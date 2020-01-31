@@ -103,8 +103,13 @@ main {
   user-select: none;
   z-index: 100;
 }
+/* line 111, sass/_app.scss */
+#splash .logo {
+  height: 50vmin;
+  width: 50vmin;
+}
 
-/* line 112, sass/_app.scss */
+/* line 117, sass/_app.scss */
 #offline {
   height: 50%;
   left: 25%;
@@ -116,7 +121,7 @@ main {
   width: 50%;
   z-index: 1;
 }
-/* line 123, sass/_app.scss */
+/* line 128, sass/_app.scss */
 #offline img {
   height: 100%;
   left: 0;
@@ -128,7 +133,7 @@ main {
 }
 
 @media only screen and (orientation: portrait) {
-  /* line 135, sass/_app.scss */
+  /* line 140, sass/_app.scss */
   #app {
     height: 100vw;
     transform: translate(-50%, -50%) rotate(90deg);

@@ -107,6 +107,11 @@ main {
 	position: relative;
 	user-select: none;
 	z-index: 100;
+
+	.logo {
+		height: 50vmin;
+		width: 50vmin;
+	}
 }
 
 #offline {
