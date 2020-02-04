@@ -94,9 +94,10 @@
 		h1 {
 			color: #83DBE7;
 			display: inline-block;
-			font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+			font-family: "Roboto Black", "Roboto", Arial Black, Helvetica, sans-serif;
 			font-size: .6em;
 			font-variant: small-caps;
+			font-weight: 900;
 			left: -2px;
 			line-height: 80%;
 			margin: 0 0 30px;
@@ -118,8 +119,9 @@
 			blockquote {
 				color: #83DBE7;
 				display: inline-block;
-				font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+				font-family: "Roboto Black", "Roboto", Arial Black, Helvetica, sans-serif;
 				font-size: .22em;
+				font-weight: 900;
 				line-height: 120%;
 				margin: -20px 0 25px;
 
@@ -140,8 +142,9 @@
 			h1 {
 				color: #83DBE7;
 				display: inline-block;
-				font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+				font-family: "Roboto Black", "Roboto", Arial Black, Helvetica, sans-serif;
 				font-size: .22em;
+				font-weight: 900;
 				line-height: 120%;
 				margin: -20px 0 25px;
 				text-transform: uppercase;
@@ -150,8 +153,9 @@
 			h2 {
 				color: #FFF;
 				display: inline-block;
-				font-family: "Roboto Black", Arial Black, Helvetica, sans-serif;
+				font-family: "Roboto Black", "Roboto", Arial Black, Helvetica, sans-serif;
 				font-size: .16em;
+				font-weight: 900;
 				margin: 0 0 .5em;
 				text-transform: uppercase;
 			}
