@@ -15,7 +15,7 @@ categories:
 ---
 ## CHALLENGE
 
-To be seen differently, rethink their branding and messaging to better represent their core beliefs and customer benefits.
+To retool branding and messaging to better represent their core beliefs and customer benefits.
 
 ## AUDIENCE
 
