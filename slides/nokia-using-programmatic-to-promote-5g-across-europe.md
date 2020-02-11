@@ -26,10 +26,6 @@ Workplace professionals
 
 Using Broadsign, NOKIA was able to deliver full motion, dynamic creatives in a campaign targeted to offices across Europe
 
-## PRODUCTS
-
-Broadsign Reach
-
 ## LOCATION
 
 Europe

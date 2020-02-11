@@ -24,9 +24,6 @@ Pedestrians & Drivers
 
 To power its premium, technologically complex network, Oriental Sunrise chose Broadsign. The Broadsign platform allows for seamless media synchronicity between panels to deliver stunning visuals on massive scales. Additionally, the unmatched stability of the platform means Oriental Sunrise doesn’t have to worry about service losses or interruptions.
 
-## PRODUCTS 
-
-Broadsign Control, Broadsign Reach
 
 ## LOCATION
 

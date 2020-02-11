@@ -16,19 +16,18 @@ categories:
 ---
 ## CHALLENGE
 
-Establish and maintain lasting connections with audiences by providing product and service information in real-time, where people transact.
+Establish and maintain lasting connections with audiences by providing product and service information in real-time, where people transact.
+
 
 ## AUDIENCE
 
-Shoppers
+Shoppers
+
 
 ## SOLUTION
 
-Starlite Media uses the entire Broadsign suite to manage and expand its DOOH network. Streamlining its inventory management has created huge time savings for the company, and the support for programmatic has helped to attract new buyers and campaigns. 
+Starlite Media uses the entire Broadsign suite to manage and expand its DOOH network. Streamlining its inventory management has created huge time savings for the company, and the support for programmatic has helped to attract new buyers and campaigns.
 
-## PRODUCTS 
-
-Broadsign Control, Broadsign Reach, Broadsign Publish, Broadsign Direct
 
 ## LOCATION
 

@@ -6,26 +6,26 @@ gallery:
   - /images/uploads/hero_boomerang.png
 categories:
   products:
-    - broadsign_control
+	- broadsign_control
+	- campsite
   programmatic: false
   verticals:
     - cinema
 ---
 ## Challenge
 
-Deliver advertising that niche audiences will love, and foster connections for filmgoers across the UK.
+Deliver advertising that niche audiences will love, and foster connections for filmgoers across the UK.
+
 
 ## Audience
 
-Movie-goers, families
+Movie-goers, families
+
 
 ## Solution
 
-Using Broadsign, Boomerang Media is able to deliver contextually relevant advertising to niche audiences, all with the assurance that there will be no outages or playback failures to disrupt the filmgoers’ experience.
+Using Broadsign, Boomerang Media is able to deliver contextually relevant advertising to niche audiences, all with the assurance that there will be no outages or playback failures to disrupt the filmgoers’ experience.
 
-## PRODUCTS 
-
-Broadsign Control
 
 ## LOCATION
 

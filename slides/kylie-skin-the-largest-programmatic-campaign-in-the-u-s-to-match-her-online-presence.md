@@ -27,10 +27,6 @@ Shoppers, pedestrians, drivers
 
 Using programmatic DOOH, the Kylie Skin team was able to execute their campaign quickly and at scale, taking over 5,800+ screens in more than 1,000 cities.
 
-## PRODUCTS
-
-Broadsign Reach
-
 ## LOCATION
 
 United States

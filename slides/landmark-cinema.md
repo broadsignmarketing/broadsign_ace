@@ -23,10 +23,6 @@ Movie-goers, all ages
 
 Using Broadsign, Landmark Cinemas can establish clear rules for content location and timing, with optimal ads then automatically distributed to the correct cinemas and screens.
 
-## PRODUCTS
-
-Broadsign Control
-
 ## LOCATION
 
 Canada

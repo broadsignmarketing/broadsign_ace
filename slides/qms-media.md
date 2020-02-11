@@ -25,9 +25,6 @@ Travelers
 
 QMS Media uses Broadsign to deliver dynamic and data-driven content to hundreds of screens. The platform’s open nature makes integrating external data a breeze, enabling creative and impactful campaigns. Broadsign Reach has also opened the door to delivering programmatic campaigns across QMS’s network.
 
-## PRODUCTS 
-
-Broadsign Control, Broadsign Reach
 
 ## LOCATION
 

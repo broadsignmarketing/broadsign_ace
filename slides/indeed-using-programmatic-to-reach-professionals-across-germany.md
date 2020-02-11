@@ -25,10 +25,6 @@ Workplace professionals
 
 Using Broadsign Reach, Indeed.com was able to programmatically deliver advertising that showcased local job availabilities to offices across Germany.
 
-## PRODUCTS
-
-Broadsign Reach
-
 ## LOCATION
 
 Germany

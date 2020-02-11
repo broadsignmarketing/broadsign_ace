@@ -27,10 +27,6 @@ March participants in Toronto and Montreal
 
 Using the Campsite DSP, our team was able to create a DOOH message and book all available screens along march routes in Montreal and Toronto, all completedin only a few hours before the march on September 27th, 2019.
 
-## PRODUCTS
-
-Broadsign Reach, Campsite
-
 ## LOCATION
 
 Canada

@@ -25,10 +25,6 @@ Pedestrians, drivers
 
 Using Broadsign Reach, their campaign was delivered programmatically across select DOOH screens in Canada’s major markets. Using target personas and bidding on screens in real-time, the campaign creatives were delivered on screens only when the right audience was in the vicinity.
 
-## PRODUCTS
-
-Broadsign Reach
-
 ## LOCATION
 
 Canada
