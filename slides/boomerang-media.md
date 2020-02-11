@@ -6,8 +6,8 @@ gallery:
   - /images/uploads/hero_boomerang.png
 categories:
   products:
-	- broadsign_control
-	- campsite
+    - broadsign_control
+    - campsite
   programmatic: false
   verticals:
     - cinema
