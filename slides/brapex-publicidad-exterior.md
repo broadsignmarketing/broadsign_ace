@@ -14,19 +14,18 @@ categories:
 ---
 ## CHALLENGE
 
-Continuously deliver fast service and innovative tech offerings to offer impactful DOOH campaigns for publishers.
+Continuously deliver fast service and innovative tech offerings to offer impactful DOOH campaigns for publishers.
+
 
 ## AUDIENCE
 
-Pedestrians & Drivers
+Pedestrians & Drivers
+
 
 ## SOLUTION
 
-With Broadsign, Brapex is able to deliver a variety of media to its screens and manage inventory in real-time, enabling its customers to utilise location-based DOOH campaigns. Brapex also offers its screens to charitable organizations; with Broadsign, it can easily rearrange its campaigns and support causes it believes in.
+With Broadsign, Brapex is able to deliver a variety of media to its screens and manage inventory in real-time, enabling its customers to utilise location-based DOOH campaigns. Brapex also offers its screens to charitable organizations; with Broadsign, it can easily rearrange its campaigns and support causes it believes in.
 
-## PRODUCTS 
-
-Broadsign Control, Broadsign Reach
 
 ## LOCATION
 
