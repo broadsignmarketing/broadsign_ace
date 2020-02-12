@@ -17,11 +17,13 @@
 .main_slider {
 	position: relative;
 	z-index: 1;
+	touch-action: pan-y;
 
 	&,
 	.slick-list,
 	.slick-track {
 		height: 100%;
+		touch-action: pan-y;
 	}
 
 	h1 {
@@ -51,6 +53,7 @@
 				justify-content: center;
 				max-height: 100%;
 				position: relative;
+				touch-action: pan-y;
 
 				&>div {
 					@include cover;

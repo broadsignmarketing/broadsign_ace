@@ -127,7 +127,7 @@ function IndexPage(props) {
 			<div id="splash">
 				<Img className="logo" fluid={data.broadsignLogo.edges[0].node.childImageSharp.fluid} alt="" objectFit="contain" loading="eager" />
 			</div>
-			<div id="app">
+			<div id="app" className={clientsSliderActive ? "clients_slider_active" : ""}>
 				<Swipeable onSwipedUp={ () => setClientsSliderActive("active") } className="inner">
 					<Slider id="main_slider" name="main_slider" {...sliderSettings}>
 						<div className="slide products" key="products">
