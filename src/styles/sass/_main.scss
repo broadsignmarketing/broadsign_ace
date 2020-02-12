@@ -16,8 +16,8 @@
 
 .main_slider {
 	position: relative;
-	z-index: 1;
 	touch-action: pan-y;
+	z-index: 1;
 
 	&,
 	.slick-list,
