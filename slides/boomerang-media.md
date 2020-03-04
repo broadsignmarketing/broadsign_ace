@@ -4,6 +4,7 @@ title: Boomerang Media
 date: 2020-01-27T21:24:31.207Z
 gallery:
   - /images/uploads/hero_boomerang.png
+  - /images/uploads/boomerang.jpg
 categories:
   products:
     - broadsign_control
