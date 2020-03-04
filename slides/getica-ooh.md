@@ -4,6 +4,7 @@ title: Getica OOH
 date: 2020-01-27T19:48:49.866Z
 gallery:
   - /images/uploads/hero_getica.png
+  - /images/uploads/getica.jpg
 categories:
   products:
     - ayuda
