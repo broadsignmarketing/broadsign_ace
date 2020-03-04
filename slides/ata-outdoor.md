@@ -4,6 +4,8 @@ title: ATA Outdoor
 date: 2020-01-27T19:39:47.180Z
 gallery:
   - /images/uploads/hero_ata.png
+  - /images/uploads/ACE - GitHub.png
+  - /images/uploads/ACE - GitHub (1).png
   - /images/uploads/2.png
 categories:
   products:
