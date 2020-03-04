@@ -4,6 +4,8 @@ title: Starlite Media
 date: 2020-01-27T21:19:17.148Z
 gallery:
   - /images/uploads/hero_starlite.png
+  - /images/uploads/Tecate_2-e1515435042278-969x570.jpg
+  - /images/uploads/Lantana_3-1170x570.jpg
 categories:
   products:
     - broadsign_control
