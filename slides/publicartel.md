@@ -4,6 +4,8 @@ title: Publicartel
 date: 2020-01-27T19:51:44.514Z
 gallery:
   - /images/uploads/hero_publicartel.png
+  - /images/uploads/Rambla_O'Higgins_esquina_Missouri_-_panoramio.jpg
+  - /images/uploads/C2ZJMYfWIAAMaQ7.jpg
 categories:
   products:
     - broadsign_control
