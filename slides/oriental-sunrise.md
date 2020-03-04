@@ -4,6 +4,7 @@ title: Oriental Sunrise
 date: 2020-01-27T18:46:45.773Z
 gallery:
   - /images/uploads/hero_os.png
+  - /images/uploads/oriental-sunrise-header.jpg
 categories:
   products:
     - broadsign_control
