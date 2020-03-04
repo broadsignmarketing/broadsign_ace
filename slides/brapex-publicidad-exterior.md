@@ -4,6 +4,8 @@ title: Brapex Publicidad Exterior
 date: 2020-01-27T18:54:18.785Z
 gallery:
   - /images/uploads/hero_brapex.png
+  - /images/uploads/b1.png
+  - /images/uploads/b2.png
 categories:
   products:
     - broadsign_control
